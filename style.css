@@ -227,23 +227,22 @@ section h2 {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .project-card {
     background: var(--card-bg-color);
-    padding: 1.5rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1;
-    min-width: 300px;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -258,7 +257,7 @@ section h2 {
 
 .project-card p {
     color: var(--text-color);
-    margin-bottom: 1rem; /* Add margin to separate the description from the button */
+    margin-bottom: 1rem;
 }
 
 .project-card .btn {
@@ -269,8 +268,8 @@ section h2 {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Ensure buttons are inline-block */
-    margin-top: 1rem; /* Add margin to separate the button from the description */
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .project-card .btn:hover {
@@ -286,8 +285,8 @@ section h2 {
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    display: inline-block; /* Ensure buttons are inline-block */
-    margin-top: 1rem; /* Add margin to separate the button from the description */
+    display: inline-block;
+    margin-top: 1rem;
 }
 
 .project-card .btn-outline:hover {
@@ -410,7 +409,7 @@ footer {
 
 /* Mobile Menu Button Styles */
 .mobile-menu-btn {
-    display: none; /* Hidden by default for desktop */
+    display: none;
     background: none;
     border: none;
     color: var(--text-color);
@@ -421,42 +420,78 @@ footer {
 
 /* Mobile Styles */
 @media screen and (max-width: 768px) {
-    .mobile-menu-btn {
-        display: block; /* Show on mobile */
-    }
-
-    nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 70%;
-        background: var(--header-bg);
-        transition: 0.3s;
-        padding: 2rem;
-        z-index: 1000;
-    }
-
-    nav.active {
-        display: block;
-        right: 0;
-    }
-
-    nav ul {
+    header {
         flex-direction: column;
-        gap: 2rem;
+        align-items: flex-start;
+        padding: 1rem;
     }
 
-    nav ul li {
-        margin: 0;
+    .logo {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #nav-menu {
+        display: none;
+        width: 100%;
+    }
+
+    #nav-menu.active {
+        display: block;
+    }
+
+    #nav-menu ul {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    #nav-menu li {
+        margin: 1rem 0;
+    }
+
+    #nav-menu a {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+        display: block;
+    }
+
+    .header-buttons {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Hero section mobile adjustments */
+    .hero {
+        min-height: 100vh;
+        padding: 2rem;
+    }
+
+    .hero-content {
+        text-align: left;
+        padding: 2rem 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .highlight {
+        background: #fff;
+        color: #000;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
     }
 }
 
 /* Scroll to Top Button Styles */
 #scroll-to-top {
     position: fixed;
-    bottom: -50px; /* Start hidden below screen */
+    bottom: -50px;
     right: 20px;
     padding: 12px;
     border-radius: 50%;
