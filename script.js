@@ -34,7 +34,7 @@ document.querySelectorAll('.project-card, .skill-card').forEach(card => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize EmailJS
-    emailjs.init("u92ZvICoQgvFk7T10"); // Replace with your actual User ID
+    emailjs.init("u92ZvICoQgvFk7T10");
 
     // Smooth scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -164,6 +164,5 @@ document.addEventListener('DOMContentLoaded', () => {
         section.classList.add('reveal');
     });
     
-    // Initial check for elements in view
     reveal();
 });
