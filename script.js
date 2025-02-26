@@ -62,10 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     type();
 
     // Scroll-to-top button
-    const scrollTopBtn = document.createElement('button');
-    scrollTopBtn.id = 'scroll-to-top';
-    scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-    document.body.appendChild(scrollTopBtn);
+    let scrollTopBtn = document.getElementById('scroll-to-top');
+    if (!scrollTopBtn) {
+        scrollTopBtn = document.createElement('button');
+        scrollTopBtn.id = 'scroll-to-top';
+        scrollTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
+        document.body.appendChild(scrollTopBtn);
+    }
 
     scrollTopBtn.style.position = 'fixed';
     scrollTopBtn.style.bottom = '20px';
@@ -80,18 +83,23 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollTopBtn.style.zIndex = '1000';
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 200) {
-            scrollTopBtn.style.display = 'block';
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
         } else {
-            scrollTopBtn.style.display = 'none';
+            scrollTopBtn.classList.remove('visible');
         }
     });
 
     scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        // Smooth scroll animation
+        const scrollToTop = () => {
+            const currentPosition = window.pageYOffset;
+            if (currentPosition > 0) {
+                window.requestAnimationFrame(scrollToTop);
+                window.scrollTo(0, currentPosition - currentPosition / 8);
+            }
+        };
+        scrollToTop();
     });
 
     // Dynamic year in footer
@@ -113,4 +121,49 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('Failed to send message. Please try again later.');
             });
     });
+
+    // Mobile Menu
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+
+    mobileMenu.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        mobileMenu.innerHTML = navMenu.classList.contains('active') ? 
+            '<i class="fas fa-times"></i>' : 
+            '<i class="fas fa-bars"></i>';
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            mobileMenu.innerHTML = '<i class="fas fa-bars"></i>';
+        });
+    });
+
+    // Scroll Reveal Animation
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal');
+        
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+
+    // Add reveal class to elements
+    const sections = document.querySelectorAll('section');
+    sections.forEach(section => {
+        section.classList.add('reveal');
+    });
+    
+    // Initial check for elements in view
+    reveal();
 });
