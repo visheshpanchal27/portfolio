@@ -1,5 +1,7 @@
 # Vishesh Panchal Portfolio
 
+**Live website:** [http://vishesh.ct.ws](http://vishesh.ct.ws)
+
 This is a personal portfolio website for **Vishesh Panchal**. It showcases skills, projects, and contact information with modern design and smooth animations.
 
 ## Features
@@ -24,8 +26,6 @@ This is a personal portfolio website for **Vishesh Panchal**. It showcases skill
 2. Open `index.html` in your web browser.
 
 No build tools or server required.
-
-**Or visit the live site here:** [http://vishesh.ct.ws](http://vishesh.ct.ws)
 
 ## Folder Structure
 
