@@ -4,26 +4,28 @@ This is a personal portfolio website for **Vishesh Panchal**. It showcases skill
 
 ## Features
 
-- Responsive design for all devices
-- Animated sections using GSAP and ScrollTrigger
-- Projects showcase with links
-- Contact form
+- Responsive design for all devices  
+- Animated sections using GSAP and ScrollTrigger  
+- Projects showcase with links  
+- Contact form  
 - Social media links
 
 ## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- [GSAP](https://greensock.com/gsap/) for animations
+- HTML5  
+- CSS3  
+- JavaScript (ES6)  
+- [GSAP](https://greensock.com/gsap/) for animations  
 - [Font Awesome](https://fontawesome.com/) for icons
 
 ## Getting Started
 
-1. **Clone or Download** this repository to your local machine.
+1. **Clone or Download** this repository to your local machine.  
 2. Open `index.html` in your web browser.
 
 No build tools or server required.
+
+**Or visit the live site here:** [http://vishesh.ct.ws](http://vishesh.ct.ws)
 
 ## Folder Structure
 
