@@ -2,7 +2,7 @@ services:
   - type: web
     name: vishesh-portfolio
     env: static
-    buildCommand: npm ci && chmod +x node_modules/.bin/* && npx react-scripts build
+    buildCommand: npm ci && npm run build
     staticPublishPath: ./build
     routes:
       - type: rewrite
