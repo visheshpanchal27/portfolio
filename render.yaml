@@ -2,8 +2,9 @@ services:
   - type: web
     name: vishesh-portfolio
     env: static
-    buildCommand: npm ci && chmod -R +x node_modules/.bin && PATH=$PATH:./node_modules/.bin CI=false react-scripts build
+    buildCommand: npm install && npm run build
     staticPublishPath: ./build
+    pullRequestPreviewsEnabled: false
     routes:
       - type: rewrite
         source: /*
