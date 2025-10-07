@@ -53,12 +53,11 @@ const Hero = () => {
       >
         {/* Profile Image */}
         <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 relative">
-          <div
-            className="w-full h-full bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-2xl sm:text-4xl font-bold shadow-2xl"
-            aria-label="Profile initials VP"
-          >
-            VP
-          </div>
+          <img
+            src="https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png"
+            alt="VP Logo"
+            className="w-full h-full rounded-full object-cover shadow-2xl"
+          />
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">

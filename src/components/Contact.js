@@ -42,7 +42,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: 'fas fa-envelope', label: 'Email', value: 'visheshpanchal864@gmail.com', link: 'mailto:visheshpanchal864@gmail.com' },
-    { icon: 'fas fa-map-marker-alt', label: 'Location', value: 'India', link: null },
+    { icon: 'fas fa-map-marker-alt', label: 'Location', value:'Ahmedabad India', link: null },
     { icon: 'fas fa-briefcase', label: 'Status', value: 'Available for opportunities', link: null }
   ];
 
