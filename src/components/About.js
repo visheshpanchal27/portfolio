@@ -30,7 +30,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-20 px-4 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900">
+    <section id="about" className="py-20 px-4 bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100 dark:from-gray-900 dark:via-gray-800 dark:to-purple-900" itemScope itemType="https://schema.org/Person">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           className="text-center mb-16"
@@ -64,10 +64,10 @@ const About = () => {
               />
               <div className="pl-8 space-y-6 text-lg leading-relaxed">
                 <p className="text-gray-800 dark:text-gray-300">
-                  Hello! I'm <span className="font-bold text-purple-700 dark:text-purple-400">Vishesh Panchal</span>, a passionate full-stack developer with a keen eye for creating exceptional digital experiences. My journey in web development began with curiosity and has evolved into a deep passion for crafting innovative solutions.
+                  Hello! I'm <span className="font-bold text-purple-700 dark:text-purple-400" itemProp="name">Vishesh Panchal</span>, a passionate <span itemProp="jobTitle">full-stack developer</span> with a keen eye for creating exceptional digital experiences. My journey in web development began with curiosity and has evolved into a deep passion for crafting innovative solutions.
                 </p>
-                <p className="text-gray-800 dark:text-gray-300">
-                  I specialize in modern web technologies including React, Node.js, and cloud platforms. I believe in writing clean, efficient code and creating user-centric applications that solve real-world problems.
+                <p className="text-gray-800 dark:text-gray-300" itemProp="description">
+                  I specialize in modern web technologies including <span itemProp="knowsAbout">React</span>, <span itemProp="knowsAbout">Node.js</span>, and <span itemProp="knowsAbout">cloud platforms</span>. I believe in writing clean, efficient code and creating user-centric applications that solve real-world problems.
                 </p>
                 <p className="text-gray-800 dark:text-gray-300">
                   When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I'm always excited to take on new challenges and collaborate on innovative projects.

@@ -41,7 +41,7 @@ const Hero = () => {
   }, [currentIndex, texts]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24" itemScope itemType="https://schema.org/Person">
       {/* Advanced Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-purple-900 dark:to-black"></div>
 
@@ -55,21 +55,25 @@ const Hero = () => {
         <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 relative">
           <img
             src="https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png"
-            alt="VP Logo"
+            alt="Vishesh Panchal - Full Stack Developer Logo"
             className="w-full h-full rounded-full object-cover shadow-2xl"
+            itemProp="image"
+            loading="eager"
+            width="128"
+            height="128"
           />
         </div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight">
+        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight" itemProp="name">
           Vishesh Panchal
         </h1>
 
         <div className="text-lg sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 h-8 sm:h-12 flex items-center justify-center">
-          <span className="text-yellow-300 dark:text-yellow-300 font-medium">{displayText}</span>
-          <span className="text-white dark:text-white ml-1 animate-pulse">|</span>
+          <span className="text-yellow-300 dark:text-yellow-300 font-medium" itemProp="jobTitle">{displayText}</span>
+          <span className="text-white dark:text-white ml-1 animate-pulse" aria-hidden="true">|</span>
         </div>
 
-        <p className="text-base sm:text-lg md:text-xl text-gray-100 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
+        <p className="text-base sm:text-lg md:text-xl text-gray-100 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2" itemProp="description">
           Crafting digital experiences with modern technologies. Passionate about creating innovative solutions that make a difference.
         </p>
 

@@ -41,7 +41,6 @@ function App() {
         <Projects />
         <Contact />
         <Footer />
-
       </motion.div>
     </div>
   );

@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://portfolio.vishesh.work.gd/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
