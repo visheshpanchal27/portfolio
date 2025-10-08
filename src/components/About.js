@@ -64,13 +64,13 @@ const About = () => {
               />
               <div className="pl-8 space-y-6 text-lg leading-relaxed">
                 <p className="text-gray-800 dark:text-gray-300">
-                  Hello! I'm <span className="font-bold text-purple-700 dark:text-purple-400" itemProp="name">Vishesh Panchal</span>, a passionate <span itemProp="jobTitle">full-stack developer</span> with a keen eye for creating exceptional digital experiences. My journey in web development began with curiosity and has evolved into a deep passion for crafting innovative solutions.
+                  Hello! I'm <span className="font-bold text-purple-700 dark:text-purple-400" itemProp="name">Vishesh Panchal</span>, a passionate <span itemProp="jobTitle">full-stack developer</span> specializing in <span itemProp="knowsAbout">MERN stack development</span>, <span itemProp="knowsAbout">AI applications</span>, and modern web technologies. Based in India, I create innovative digital solutions that drive business growth and user engagement.
                 </p>
                 <p className="text-gray-800 dark:text-gray-300" itemProp="description">
-                  I specialize in modern web technologies including <span itemProp="knowsAbout">React</span>, <span itemProp="knowsAbout">Node.js</span>, and <span itemProp="knowsAbout">cloud platforms</span>. I believe in writing clean, efficient code and creating user-centric applications that solve real-world problems.
+                  With expertise in <span itemProp="knowsAbout">React.js</span>, <span itemProp="knowsAbout">Node.js</span>, <span itemProp="knowsAbout">MongoDB</span>, and <span itemProp="knowsAbout">Python</span>, I build scalable web applications, e-commerce platforms, and AI-powered solutions. My flagship project, a production-ready MERN e-commerce platform with 79.2% AI accuracy in deepfake detection, showcases my ability to deliver enterprise-level solutions.
                 </p>
                 <p className="text-gray-800 dark:text-gray-300">
-                  When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or mentoring aspiring developers. I'm always excited to take on new challenges and collaborate on innovative projects.
+                  I'm committed to writing clean, secure code following industry best practices. From payment gateway integrations to machine learning implementations, I transform complex requirements into user-friendly applications. Available for freelance projects, full-time opportunities, and technical consulting worldwide.
                 </p>
               </div>
             </div>
