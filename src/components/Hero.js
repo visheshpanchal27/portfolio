@@ -53,31 +53,36 @@ const Hero = () => {
       >
         {/* Profile Image */}
         <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 relative">
-          <img
-            src="https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png"
-            alt="Vishesh Panchal - Full Stack Developer Logo"
-            className="w-full h-full rounded-full object-cover shadow-2xl"
+          <div 
+            className="w-full h-full rounded-full shadow-2xl bg-cover bg-center bg-no-repeat select-none"
+            style={{
+              backgroundImage: 'url(https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png)',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none'
+            }}
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
+            onSelectStart={(e) => e.preventDefault()}
             itemProp="image"
-            loading="eager"
-            width="128"
-            height="128"
-          />
+          >
+            <div className="w-full h-full rounded-full bg-transparent absolute inset-0 z-10"></div>
+          </div>
         </div>
 
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight" itemProp="name">
           Vishesh Panchal
         </h1>
-        <div className="text-lg sm:text-xl text-white/90 mb-4 font-medium">
-          Official Portfolio & Website
-        </div>
 
-        <div className="text-lg sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 h-8 sm:h-12 flex items-center justify-center">
+
+        <h2 className="text-lg sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 h-8 sm:h-12 flex items-center justify-center">
           <span className="text-yellow-300 dark:text-yellow-300 font-medium" itemProp="jobTitle">{displayText}</span>
           <span className="text-white dark:text-white ml-1 animate-pulse" aria-hidden="true">|</span>
-        </div>
+        </h2>
 
         <p className="text-base sm:text-lg md:text-xl text-gray-100 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2" itemProp="description">
-          Welcome to Vishesh Panchal's official portfolio. Expert Full Stack Developer specializing in MERN Stack, AI applications, and production-ready web solutions. Hire Vishesh Panchal for your next project.
+          Expert Full Stack Developer specializing in <a href="#skills" className="text-yellow-300 hover:text-yellow-200 underline">MERN Stack</a>, <a href="#projects" className="text-yellow-300 hover:text-yellow-200 underline">AI applications</a>, and production-ready web solutions. View my <a href="#projects" className="text-yellow-300 hover:text-yellow-200 underline">featured projects</a>, explore my <a href="#services" className="text-yellow-300 hover:text-yellow-200 underline">services</a>, and <a href="#contact" className="text-yellow-300 hover:text-yellow-200 underline">get in touch</a>.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">

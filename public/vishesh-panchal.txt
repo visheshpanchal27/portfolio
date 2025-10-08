@@ -1,6 +1,6 @@
-Vishesh Panchal - Official Portfolio and Website
+Vishesh Panchal - Portfolio and Website
 
-This is the official website of Vishesh Panchal, a professional Full Stack Developer specializing in MERN Stack development, AI applications, and modern web technologies.
+This is the website of Vishesh Panchal, a professional Full Stack Developer specializing in MERN Stack development, AI applications, and modern web technologies.
 
 About Vishesh Panchal:
 - Full Stack Developer with expertise in React, Node.js, MongoDB, Express.js
@@ -54,4 +54,4 @@ Hire Vishesh Panchal for:
 
 Vishesh Panchal is available for freelance projects, full-time opportunities, and technical consulting worldwide.
 
-This is the official and authentic website of Vishesh Panchal. For genuine contact and portfolio information, visit https://portfolio.vishesh.work.gd
+This is the authentic website of Vishesh Panchal. For contact and portfolio information, visit https://portfolio.vishesh.work.gd

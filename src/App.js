@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import NameSEO from './components/NameSEO';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -43,7 +42,6 @@ function App() {
         >
           <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Hero />
-          <NameSEO />
           <About />
           <Skills />
           <Projects />

@@ -83,7 +83,7 @@ const About = () => {
               whileInView="visible"
               viewport={{ once: true }}
             >
-              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Core Competencies</h3>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">Technical Skills & Expertise</h3>
               {skills.map((skill, index) => (
                 <motion.div key={index} variants={itemVariants} className="space-y-2">
                   <div className="flex justify-between items-center">
