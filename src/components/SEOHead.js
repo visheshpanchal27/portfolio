@@ -35,35 +35,54 @@ const SEOHead = ({
   };
 
   return (
-    <Helmet>
-      {/* Primary Meta Tags */}
-      <title>{title}</title>
-      <meta name="title" content={title} />
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <link rel="canonical" href={url} />
+    <>
+      <Helmet>
+        {/* Primary Meta Tags */}
+        <title>{title}</title>
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <link rel="canonical" href={url} />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content={type} />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={image} />
+        <meta property="og:site_name" content="Vishesh Panchal Portfolio" />
+        
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={url} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={image} />
+        <meta property="twitter:creator" content="@visheshpanchal" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(structuredData)}
+        </script>
+      </Helmet>
       
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta property="og:site_name" content="Vishesh Panchal Portfolio" />
-      
-      {/* Twitter */}
-      <meta property="twitter:card" content="summary_large_image" />
-      <meta property="twitter:url" content={url} />
-      <meta property="twitter:title" content={title} />
-      <meta property="twitter:description" content={description} />
-      <meta property="twitter:image" content={image} />
-      <meta property="twitter:creator" content="@visheshpanchal" />
-      
-      {/* Structured Data */}
-      <script type="application/ld+json">
-        {JSON.stringify(structuredData)}
-      </script>
-    </Helmet>
+      {/* Hidden SEO Content */}
+      <div className="sr-only" itemScope itemType="https://schema.org/Person">
+        <h1 itemProp="name">Vishesh Panchal</h1>
+        <span itemProp="jobTitle">Full Stack Developer</span>
+        <span itemProp="jobTitle">MERN Stack Developer</span>
+        <span itemProp="jobTitle">React Developer</span>
+        <span itemProp="description">
+          Vishesh Panchal is a professional Full Stack Developer specializing in MERN Stack development, 
+          AI applications, React.js, Node.js, MongoDB, Express.js, Python, Machine Learning.
+        </span>
+        {seoConfig.skills.map((skill, index) => (
+          <span key={index} itemProp="knowsAbout">{skill}</span>
+        ))}
+        <span itemProp="url">{seoConfig.baseUrl}</span>
+        <span itemProp="email">{seoConfig.email}</span>
+      </div>
+    </>
   );
 };
 

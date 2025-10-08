@@ -12,7 +12,6 @@ import BlogSection from './components/BlogSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
-import AdditionalSEO from './components/AdditionalSEO';
 
 
 function App() {
@@ -35,7 +34,6 @@ function App() {
   return (
     <HelmetProvider>
       <SEOHead />
-      <AdditionalSEO />
       <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
         <motion.div
           className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"

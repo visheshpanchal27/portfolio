@@ -9,7 +9,7 @@
 
 <div align="center">
   <h3>🌟 A stunning, responsive portfolio showcasing modern web development skills</h3>
-  <p><strong>Live Demo:</strong> <a href="http://vishesh.ct.ws">vishesh.ct.ws</a></p>
+  <p><strong>Live Demo:</strong> <a href="https://portfolio.vishesh.work.gd">portfolio.vishesh.work.gd</a></p>
 </div>
 
 ---
@@ -38,8 +38,9 @@
 ### 🛠️ **Technical Excellence**
 - **Component-Based Architecture** - Clean, reusable React components
 - **Performance Optimized** - Lightweight animations and efficient rendering
-- **SEO Friendly** - Proper meta tags and semantic HTML structure
+- **Advanced SEO** - Dynamic meta tags, structured data, comprehensive optimization
 - **Accessibility** - WCAG compliant with proper ARIA labels
+- **PWA Ready** - Progressive Web App features for mobile experience
 
 ---
 
@@ -51,6 +52,7 @@
 | **Tailwind CSS** | Styling & Design System | 3.3.0 |
 | **Framer Motion** | Animations & Transitions | 10.16.4 |
 | **EmailJS** | Contact Form Integration | 3.11.0 |
+| **React Helmet Async** | SEO Meta Management | Latest |
 | **Font Awesome** | Icons & Graphics | 6.4.0 |
 | **PostCSS** | CSS Processing | 8.4.24 |
 
@@ -91,14 +93,35 @@ npm run build
 
 This creates an optimized production build in the `build` folder.
 
+### SEO Setup (Important!)
+
+1. **Google Search Console**
+   ```bash
+   # After deployment, submit your sitemap:
+   # https://your-domain.com/sitemap.xml
+   ```
+
+2. **Update Domain**
+   - Edit `src/config/seo.js` with your actual domain
+   - Update all URLs in `public/sitemap.xml`
+   - Modify `public/robots.txt` with correct sitemap URL
+
+3. **EmailJS Configuration**
+   - Create account at [EmailJS](https://www.emailjs.com/)
+   - Update service ID, template ID in `Contact.js`
+
 ---
 
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── 📁 public/
-│   └── index.html              # HTML template
+├── 📁 docs/                    # SEO guides & documentation
+├── 📁 public/                  # Static files & SEO assets
+│   ├── index.html              # HTML template with SEO
+│   ├── sitemap.xml             # SEO sitemap
+│   ├── robots.txt              # Search engine instructions
+│   └── manifest.json           # PWA manifest
 ├── 📁 src/
 │   ├── 📁 components/          # React components
 │   │   ├── Header.js           # Navigation with theme toggle
@@ -106,16 +129,20 @@ portfolio/
 │   │   ├── About.js            # About section with stats
 │   │   ├── Skills.js           # Skills showcase with tabs
 │   │   ├── Projects.js         # Project gallery with filtering
+│   │   ├── ServicesSection.js  # Professional services
+│   │   ├── BlogSection.js      # Content marketing section
 │   │   ├── Contact.js          # Contact form with EmailJS
 │   │   ├── Footer.js           # Footer with social links
-│   │   └── LoadingScreen.js    # Loading animation
+│   │   ├── SEOHead.js          # Advanced SEO management
+│   │   └── NameSEO.js          # Name-focused SEO targeting
+│   ├── 📁 config/              # Configuration files
+│   │   └── seo.js              # SEO configuration
 │   ├── App.js                  # Main app component
 │   ├── index.js                # React DOM entry point
 │   └── index.css               # Global styles & animations
 ├── 📄 package.json             # Dependencies & scripts
 ├── 📄 tailwind.config.js       # Tailwind configuration
-├── 📄 postcss.config.js        # PostCSS configuration
-└── 📄 README.md                # Project documentation
+└── 📄 PROJECT_STRUCTURE.md     # Detailed project structure
 ```
 
 ---
@@ -176,15 +203,33 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 ---
 
-## 🌟 Performance Features
+## 🌟 Performance & SEO Features
 
 - **Optimized Animations** - Reduced motion preferences respected
 - **Lazy Loading** - Components load as needed
 - **Efficient Rendering** - Minimal re-renders with proper React patterns
 - **Compressed Assets** - Optimized images and fonts
-- **SEO Optimized** - Meta tags and semantic HTML
+- **Advanced SEO** - Dynamic meta tags, structured data, sitemap
+- **Search Engine Optimized** - Name targeting, keyword optimization
+- **PWA Features** - Offline support and mobile app experience
+- **Performance Monitoring** - Core Web Vitals optimization
 
 ---
+
+## 🚀 Deployment
+
+### Recommended Platforms
+- **Netlify** (Recommended for React apps)
+- **Vercel** (Great for Next.js/React)
+- **GitHub Pages** (Free hosting)
+- **Render** (Full-stack applications)
+
+### Deployment Steps
+1. Build the project: `npm run build`
+2. Deploy the `build` folder to your hosting platform
+3. Set up custom domain (optional)
+4. Submit sitemap to Google Search Console
+5. Monitor SEO performance
 
 ## 📱 Browser Support
 
@@ -218,7 +263,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Vishesh Panchal** - Full Stack Developer passionate about creating innovative digital solutions.
 
-- 🌐 **Portfolio:** [vishesh.ct.ws](http://vishesh.ct.ws)
+- 🌐 **Portfolio:** [portfolio.vishesh.work.gd](https://portfolio.vishesh.work.gd)
 - 💼 **LinkedIn:** [vishesh-panchal-144281353](https://www.linkedin.com/in/vishesh-panchal-144281353)
 - 🐱 **GitHub:** [visheshpanchal27](https://github.com/visheshpanchal27)
 - 📧 **Email:** visheshpanchal864@gmail.com
