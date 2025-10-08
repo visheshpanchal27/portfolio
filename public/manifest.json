@@ -1,32 +1,20 @@
 {
-  "short_name": "Vishesh Portfolio",
+  "short_name": "Vishesh Panchal",
   "name": "Vishesh Panchal - Full Stack Developer Portfolio",
-  "description": "Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies",
+  "description": "Official portfolio of Vishesh Panchal, Full Stack Developer specializing in MERN Stack, AI applications, and modern web technologies",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     }
   ],
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#6366f1",
   "background_color": "#ffffff",
-  "orientation": "portrait-primary",
+  "categories": ["developer", "portfolio", "full-stack", "react", "nodejs"],
+  "lang": "en",
   "scope": "/",
-  "lang": "en-US",
-  "categories": ["portfolio", "developer", "technology"],
-  "screenshots": [
-    {
-      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png",
-      "sizes": "1280x720",
-      "type": "image/png"
-    }
-  ]
+  "orientation": "portrait-primary"
 }

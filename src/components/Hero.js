@@ -67,6 +67,9 @@ const Hero = () => {
         <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight" itemProp="name">
           Vishesh Panchal
         </h1>
+        <div className="text-lg sm:text-xl text-white/90 mb-4 font-medium">
+          Official Portfolio & Website
+        </div>
 
         <div className="text-lg sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 h-8 sm:h-12 flex items-center justify-center">
           <span className="text-yellow-300 dark:text-yellow-300 font-medium" itemProp="jobTitle">{displayText}</span>
@@ -74,7 +77,7 @@ const Hero = () => {
         </div>
 
         <p className="text-base sm:text-lg md:text-xl text-gray-100 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2" itemProp="description">
-          Crafting digital experiences with modern technologies. Passionate about creating innovative solutions that make a difference.
+          Welcome to Vishesh Panchal's official portfolio. Expert Full Stack Developer specializing in MERN Stack, AI applications, and production-ready web solutions. Hire Vishesh Panchal for your next project.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">

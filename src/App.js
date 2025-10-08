@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import NameSEO from './components/NameSEO';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -11,6 +12,7 @@ import BlogSection from './components/BlogSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
+import AdditionalSEO from './components/AdditionalSEO';
 
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
   return (
     <HelmetProvider>
       <SEOHead />
+      <AdditionalSEO />
       <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
         <motion.div
           className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
@@ -42,6 +45,7 @@ function App() {
         >
           <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           <Hero />
+          <NameSEO />
           <About />
           <Skills />
           <Projects />
