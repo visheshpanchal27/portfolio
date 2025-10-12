@@ -1,6 +1,34 @@
+// Domain configuration for multiple URL variations
+const getDomainConfig = () => {
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // Define primary domain (for canonical URLs)
+  const primaryDomain = 'https://vishesh.work.gd';
+  
+  // Current domain configuration
+  const currentDomain = `${protocol}//${hostname}`;
+  
+  return {
+    primaryDomain,
+    currentDomain,
+    isCanonical: currentDomain === primaryDomain
+  };
+};
+
 export const seoConfig = {
-  // Update this with your actual domain
-  baseUrl: 'https://portfolio.vishesh.work.gd',
+  // Primary domain for canonical URLs
+  baseUrl: 'https://vishesh.work.gd',
+  
+  // All domain variations
+  domains: [
+    'https://vishesh.work.gd',
+    'https://www.vishesh.work.gd', 
+    'https://portfolio.vishesh.work.gd'
+  ],
+  
+  // Get current domain config
+  getDomainConfig,
   
   // Personal Information
   name: 'Vishesh Panchal',
@@ -17,8 +45,27 @@ export const seoConfig = {
   // SEO Data
   defaultTitle: 'Vishesh Panchal | Full Stack Developer & React Specialist',
   defaultDescription: 'Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio featuring MERN stack projects, AI applications, and innovative web solutions.',
-  keywords: 'Vishesh Panchal, Full Stack Developer, React Developer, MERN Stack, JavaScript, Node.js, MongoDB, Portfolio, Web Development, AI Projects, E-commerce',
+  keywords: 'Vishesh Panchal, Full Stack Developer, React Developer, MERN Stack, JavaScript, Node.js, MongoDB, Portfolio, Web Development, AI Projects, E-commerce, vishesh.work.gd, portfolio.vishesh.work.gd',
   image: 'https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png',
+  
+  // Domain-specific titles and descriptions
+  domainSpecific: {
+    'vishesh.work.gd': {
+      title: 'Vishesh Panchal | Official Portfolio - Full Stack Developer',
+      description: 'Official website of Vishesh Panchal - Full Stack Developer specializing in MERN Stack, AI applications, and modern web development. Explore projects and get in touch.',
+      keywords: 'Vishesh Panchal official, vishesh.work.gd, Full Stack Developer, MERN Stack Expert'
+    },
+    'www.vishesh.work.gd': {
+      title: 'Vishesh Panchal | Professional Portfolio - MERN Stack Developer', 
+      description: 'Professional portfolio of Vishesh Panchal showcasing expertise in React, Node.js, MongoDB, AI projects, and e-commerce solutions. Available for freelance work.',
+      keywords: 'Vishesh Panchal professional, www.vishesh.work.gd, MERN Stack Developer, React Expert'
+    },
+    'portfolio.vishesh.work.gd': {
+      title: 'Vishesh Panchal Portfolio | Full Stack Developer & AI Specialist',
+      description: 'Complete portfolio showcasing Vishesh Panchal\'s work in Full Stack Development, MERN Stack projects, AI applications, and innovative web solutions.',
+      keywords: 'Vishesh Panchal portfolio, portfolio.vishesh.work.gd, Full Stack Projects, AI Developer'
+    }
+  },
   
   // Skills for structured data
   skills: ['React', 'Node.js', 'JavaScript', 'MongoDB', 'Express.js', 'Python', 'Java', 'Machine Learning', 'TypeScript', 'Tailwind CSS'],
@@ -28,7 +75,7 @@ export const seoConfig = {
     home: {
       title: 'Vishesh Panchal | Full Stack Developer Portfolio',
       description: 'Welcome to my portfolio! I\'m a Full Stack Developer passionate about creating innovative web solutions with React, Node.js, and modern technologies.',
-      keywords: 'portfolio, full stack developer, react developer, web development, vishesh panchal'
+      keywords: 'portfolio, full stack developer, react developer, web development, vishesh panchal, vishesh.work.gd'
     },
     about: {
       title: 'About Vishesh Panchal | Full Stack Developer',
@@ -48,7 +95,17 @@ export const seoConfig = {
     contact: {
       title: 'Contact Vishesh Panchal | Full Stack Developer',
       description: 'Get in touch with me for web development projects, collaborations, or job opportunities. Let\'s build something amazing together!',
-      keywords: 'contact vishesh panchal, hire full stack developer, web development services, react developer contact'
+      keywords: 'contact vishesh panchal, hire full stack developer, web development services, react developer contact, vishesh.work.gd contact'
     }
-  }
-};
+  },
+  
+  // Get SEO data based on current domain
+  getSEOForDomain: (hostname) => {
+    const domainKey = hostname.replace('https://', '').replace('http://', '');
+    return seoConfig.domainSpecific[domainKey] || {
+      title: seoConfig.defaultTitle,
+      description: seoConfig.defaultDescription, 
+      keywords: seoConfig.keywords
+    };
+  },
+}

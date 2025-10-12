@@ -1,15 +1,17 @@
 User-agent: *
 Allow: /
 
-# Sitemap
+# Sitemaps for all domains
 Sitemap: https://portfolio.vishesh.work.gd/sitemap.xml
+Sitemap: https://vishesh.work.gd/sitemap-vishesh.xml
+Sitemap: https://www.vishesh.work.gd/sitemap-www.xml
+Sitemap: https://portfolio.vishesh.work.gd/sitemap-index.xml
 
 # Additional content
-Allow: /vishesh-panchal.txt
+Allow: /sitemap*.xml
+Allow: /manifest.json
 
 # Crawl-delay
 Crawl-delay: 1
 
-# Vishesh Panchal official website
-# Full Stack Developer portfolio
-# MERN Stack expert
+# Vishesh Panchal - Full Stack Developer
