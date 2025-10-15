@@ -3,7 +3,7 @@ const getDomainConfig = () => {
   const hostname = window.location.hostname;
   const protocol = window.location.protocol;
   
-  // Define primary domain (for canonical URLs)
+  // Define primary domain (main domain for canonical URLs)
   const primaryDomain = 'https://vishesh.work.gd';
   
   // Current domain configuration
@@ -20,7 +20,7 @@ export const seoConfig = {
   // Primary domain for canonical URLs
   baseUrl: 'https://vishesh.work.gd',
   
-  // All domain variations
+  // All domain variations (main domain first)
   domains: [
     'https://vishesh.work.gd',
     'https://www.vishesh.work.gd', 
