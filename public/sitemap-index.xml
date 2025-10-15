@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
-    <loc>https://portfolio.vishesh.work.gd/sitemap.xml</loc>
+    <loc>https://vishesh.work.gd/sitemap.xml</loc>
     <lastmod>2024-12-19</lastmod>
   </sitemap>
   <sitemap>
     <loc>https://vishesh.work.gd/sitemap-vishesh.xml</loc>
-    <lastmod>2024-12-19</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://www.vishesh.work.gd/sitemap-www.xml</loc>
     <lastmod>2024-12-19</lastmod>
   </sitemap>
 </sitemapindex>

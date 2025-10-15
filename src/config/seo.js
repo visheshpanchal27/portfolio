@@ -23,8 +23,7 @@ export const seoConfig = {
   // All domain variations (main domain first)
   domains: [
     'https://vishesh.work.gd',
-    'https://www.vishesh.work.gd', 
-    'https://portfolio.vishesh.work.gd'
+    'https://www.vishesh.work.gd'
   ],
   
   // Get current domain config
@@ -45,7 +44,7 @@ export const seoConfig = {
   // SEO Data
   defaultTitle: 'Vishesh Panchal | Full Stack Developer & React Specialist',
   defaultDescription: 'Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio featuring MERN stack projects, AI applications, and innovative web solutions.',
-  keywords: 'Vishesh Panchal, Full Stack Developer, React Developer, MERN Stack, JavaScript, Node.js, MongoDB, Portfolio, Web Development, AI Projects, E-commerce, vishesh.work.gd, portfolio.vishesh.work.gd',
+  keywords: 'Vishesh Panchal, Full Stack Developer, React Developer, MERN Stack, JavaScript, Node.js, MongoDB, Portfolio, Web Development, AI Projects, E-commerce, vishesh.work.gd',
   image: 'https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png',
   
   // Domain-specific titles and descriptions
@@ -60,11 +59,7 @@ export const seoConfig = {
       description: 'Professional portfolio of Vishesh Panchal showcasing expertise in React, Node.js, MongoDB, AI projects, and e-commerce solutions. Available for freelance work.',
       keywords: 'Vishesh Panchal professional, www.vishesh.work.gd, MERN Stack Developer, React Expert'
     },
-    'portfolio.vishesh.work.gd': {
-      title: 'Vishesh Panchal Portfolio | Full Stack Developer & AI Specialist',
-      description: 'Complete portfolio showcasing Vishesh Panchal\'s work in Full Stack Development, MERN Stack projects, AI applications, and innovative web solutions.',
-      keywords: 'Vishesh Panchal portfolio, portfolio.vishesh.work.gd, Full Stack Projects, AI Developer'
-    }
+
   },
   
   // Skills for structured data

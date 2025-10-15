@@ -207,7 +207,7 @@ const SEOHead = ({
         <span itemProp="description">
           Vishesh Panchal is a professional Full Stack Developer specializing in MERN Stack development, 
           AI applications, React.js, Node.js, MongoDB, Express.js, Python, Machine Learning. 
-          Official website: vishesh.work.gd, portfolio.vishesh.work.gd
+          Official website: vishesh.work.gd
         </span>
         {seoConfig.skills.map((skill, index) => (
           <span key={index} itemProp="knowsAbout">{skill}</span>

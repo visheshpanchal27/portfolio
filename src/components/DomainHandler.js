@@ -41,11 +41,7 @@ const DomainHandler = () => {
           addMetaTag('og:title', 'Vishesh Panchal | Professional Portfolio - MERN Stack Developer', true);
           break;
           
-        case 'portfolio.vishesh.work.gd':
-          addMetaTag('description', 'Complete portfolio showcasing Vishesh Panchal\'s work in Full Stack Development, MERN Stack projects, AI applications, and innovative web solutions.');
-          addMetaTag('keywords', 'Vishesh Panchal portfolio, portfolio.vishesh.work.gd, Full Stack Projects, AI Developer, MERN Stack Portfolio');
-          addMetaTag('og:title', 'Vishesh Panchal Portfolio | Full Stack Developer & AI Specialist', true);
-          break;
+
       }
       
       // Add structured data for current domain
@@ -60,7 +56,7 @@ const DomainHandler = () => {
         "author": {
           "@type": "Person",
           "name": "Vishesh Panchal",
-          "url": "https://portfolio.vishesh.work.gd"
+          "url": "https://vishesh.work.gd"
         },
         "mainEntity": {
           "@type": "Person",
