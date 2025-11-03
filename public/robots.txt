@@ -1,29 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Disallow: /*.json$
-Disallow: /build/
-Disallow: /node_modules/
 
-# Primary sitemap (main domain)
 Sitemap: https://vishesh.work.gd/sitemap.xml
-Sitemap: https://vishesh.work.gd/sitemap-vishesh.xml
-
-# Allow important files
-Allow: /sitemap*.xml
-Allow: /manifest.json
-Allow: /favicon.ico
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Specific bot instructions
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-
-# Vishesh Panchal - Full Stack Developer Portfolio

@@ -21,7 +21,9 @@
     <meta name="application-name" content="Vishesh Panchal Portfolio" />
     <meta name="msapplication-TileColor" content="#6366f1" />
     <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="bingbot" content="index, follow" />
     <link rel="canonical" href="https://vishesh.work.gd" />
     
     <!-- Open Graph / Facebook -->
@@ -148,43 +150,19 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
   </head>
   <body>
-    <script>
-      // Disable right-click
-      document.addEventListener('contextmenu', e => e.preventDefault());
-      
-      // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-      document.addEventListener('keydown', e => {
-        if (e.keyCode === 123 || 
-            (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) ||
-            (e.ctrlKey && e.keyCode === 85)) {
-          e.preventDefault();
-          return false;
-        }
-      });
-      
-      // Disable text selection
-      document.onselectstart = () => false;
-      document.ondragstart = () => false;
-    </script>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <noscript>
+      <h1>Vishesh Panchal - Full Stack Developer</h1>
+      <p>Welcome to the portfolio of Vishesh Panchal, a professional Full Stack Developer specializing in MERN Stack development, React.js, Node.js, MongoDB, and AI applications.</p>
+      <h2>Skills</h2>
+      <p>React, Node.js, JavaScript, MongoDB, Express.js, Python, Java, Machine Learning, AI, Computer Vision</p>
+      <h2>Contact</h2>
+      <p>Email: visheshpanchal864@gmail.com</p>
+      <p>GitHub: https://github.com/visheshpanchal27</p>
+      <p>LinkedIn: https://www.linkedin.com/in/vishesh-panchal-144281353</p>
+    </noscript>
     <div id="root"></div>
     
-    <style>
-      * {
-        -webkit-user-select: none !important;
-        -moz-user-select: none !important;
-        -ms-user-select: none !important;
-        user-select: none !important;
-      }
-      
-      img {
-        -webkit-user-drag: none !important;
-        -khtml-user-drag: none !important;
-        -moz-user-drag: none !important;
-        -o-user-drag: none !important;
-        user-drag: none !important;
-        pointer-events: none !important;
-      }
-    </style>
+
   </body>
 </html>
