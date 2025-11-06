@@ -12,6 +12,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
 import DomainHandler from './components/DomainHandler';
+import ContentSection from './components/ContentSection';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <About />
           <Skills />
           <Projects />
+          <ContentSection />
           <ServicesSection />
           <BlogSection />
           <Contact />

@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://vishesh.work.gd/sitemap.xml
+Sitemap: https://vishesh.work.gd/sitemap_index.txt
