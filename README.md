@@ -137,7 +137,7 @@
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/38B2AC/ffffff?text=🛠️" alt="Tech Stack" width="100">
+  <img src="https://img.shields.io/badge/🛠️-Tech_Stack-38B2AC?style=for-the-badge" alt="Tech Stack" width="100">
   
   <br><br>
   
@@ -196,7 +196,7 @@
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/00D4AA/ffffff?text=🚀" alt="Quick Start" width="100">
+  <img src="https://img.shields.io/badge/🚀-Quick_Start-00D4AA?style=for-the-badge" alt="Quick Start" width="100">
   
   <br><br>
   
@@ -223,11 +223,11 @@ git --version   # v2.0.0 or higher ✅
     <tr>
       <td align="center" width="50%">
         <h4>🔥 Quick Setup</h4>
-        <img src="https://via.placeholder.com/200x150/FF6B35/ffffff?text=▶️+Setup+Demo" alt="Quick Setup" width="200">
+        <img src="https://img.shields.io/badge/🔥-Quick_Setup-FF6B35?style=for-the-badge&logo=npm" alt="Quick Setup" width="200">
       </td>
       <td align="center" width="50%">
         <h4>🛠️ Manual Setup</h4>
-        <img src="https://via.placeholder.com/200x150/4CAF50/ffffff?text=▶️+Manual+Demo" alt="Manual Setup" width="200">
+        <img src="https://img.shields.io/badge/🛠️-Manual_Setup-4CAF50?style=for-the-badge&logo=git" alt="Manual Setup" width="200">
       </td>
     </tr>
   </table>
@@ -283,7 +283,7 @@ npm start
 ## 📁 Project Structure
 
 <div align="center">
-  <img src="https://via.placeholder.com/100x100/FF6B35/ffffff?text=📁" alt="Project Structure" width="100">
+  <img src="https://img.shields.io/badge/📁-Project_Structure-FF6B35?style=for-the-badge" alt="Project Structure" width="100">
 </div>
 
 ```
@@ -318,7 +318,7 @@ npm start
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/4CAF50/ffffff?text=🎯" alt="Featured Projects" width="100">
+  <img src="https://img.shields.io/badge/🎯-Featured_Projects-4CAF50?style=for-the-badge" alt="Featured Projects" width="100">
   
   <br><br>
   
@@ -333,7 +333,7 @@ npm start
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="https://via.placeholder.com/400x200/FF6B35/ffffff?text=▶️+E-Commerce+Demo" alt="E-Commerce Platform" width="400">
+        <img src="https://img.shields.io/badge/🛒-E_Commerce_Platform-FF6B35?style=for-the-badge&logo=shopify" alt="E-Commerce Platform" width="400">
         <h3>🛒 MERN E-Commerce Platform</h3>
         <p><strong>🎯 Impact:</strong> 500+ users, $10K+ transactions</p>
         <p><strong>🛠️ Tech:</strong> React, Node.js, MongoDB, Express, PayPal</p>
@@ -344,7 +344,7 @@ npm start
         </a>
       </td>
       <td align="center" width="50%">
-        <img src="https://via.placeholder.com/400x200/0055FF/ffffff?text=▶️+AI+Demo" alt="AI DeepFake Detector" width="400">
+        <img src="https://img.shields.io/badge/🤖-AI_DeepFake_Detector-0055FF?style=for-the-badge&logo=tensorflow" alt="AI DeepFake Detector" width="400">
         <h3>🤖 AI DeepFake Detector</h3>
         <p><strong>🎯 Accuracy:</strong> 79.2% detection rate</p>
         <p><strong>🛠️ Tech:</strong> Python, OpenCV, TensorFlow, Computer Vision</p>
@@ -357,7 +357,7 @@ npm start
     </tr>
     <tr>
       <td align="center">
-        <img src="https://via.placeholder.com/400x200/4CAF50/ffffff?text=▶️+Shopping+Demo" alt="LV Shopping Center" width="400">
+        <img src="https://img.shields.io/badge/🏪-LV_Shopping_Center-4CAF50?style=for-the-badge&logo=java" alt="LV Shopping Center" width="400">
         <h3>🏪 LV Shopping Center</h3>
         <p><strong>🎯 Scale:</strong> Enterprise-level application</p>
         <p><strong>🛠️ Tech:</strong> Java, JSP, Servlets, MySQL</p>
@@ -368,7 +368,7 @@ npm start
         </a>
       </td>
       <td align="center">
-        <img src="https://via.placeholder.com/400x200/2196F3/ffffff?text=▶️+Banking+Demo" alt="Banking Management System" width="400">
+        <img src="https://img.shields.io/badge/🏦-Banking_System-2196F3?style=for-the-badge&logo=java" alt="Banking Management System" width="400">
         <h3>🏦 Banking Management System</h3>
         <p><strong>🎯 Security:</strong> Bank-grade security implementation</p>
         <p><strong>🛠️ Tech:</strong> Core Java, File Handling, OOP</p>
@@ -400,7 +400,7 @@ npm start
 ## 🎨 Customization Guide
 
 <div align="center">
-  <img src="https://via.placeholder.com/100x100/9C27B0/ffffff?text=🎨" alt="Customization" width="100">
+  <img src="https://img.shields.io/badge/🎨-Customization-9C27B0?style=for-the-badge" alt="Customization" width="100">
 </div>
 
 <details>
@@ -444,7 +444,7 @@ npm start
 ## 📧 Contact Form Setup
 
 <div align="center">
-  <img src="https://via.placeholder.com/100x100/E91E63/ffffff?text=📧" alt="Contact Setup" width="100">
+  <img src="https://img.shields.io/badge/📧-Contact_Setup-E91E63?style=for-the-badge" alt="Contact Setup" width="100">
 </div>
 
 The contact form uses EmailJS for sending emails. To set it up:
@@ -459,7 +459,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/FFC107/ffffff?text=🌟" alt="Performance" width="100">
+  <img src="https://img.shields.io/badge/🌟-Performance-FFC107?style=for-the-badge" alt="Performance" width="100">
   
   <br><br>
   
@@ -504,7 +504,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/795548/ffffff?text=🚀" alt="Deployment" width="100">
+  <img src="https://img.shields.io/badge/🚀-Deployment-795548?style=for-the-badge" alt="Deployment" width="100">
   
   <br><br>
   
@@ -555,7 +555,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/607D8B/ffffff?text=📱" alt="Browser Support" width="100">
+  <img src="https://img.shields.io/badge/📱-Browser_Support-607D8B?style=for-the-badge" alt="Browser Support" width="100">
   
   <br><br>
   
@@ -600,7 +600,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/8BC34A/ffffff?text=🤝" alt="Contributing" width="100">
+  <img src="https://img.shields.io/badge/🤝-Contributing-8BC34A?style=for-the-badge" alt="Contributing" width="100">
   
   <br><br>
   
@@ -645,7 +645,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/900x200/1a1a1a/ffffff?text=▶️+Developer+Introduction" alt="Developer Introduction" width="900">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=A9FEF7&center=true&vCenter=true&width=900&height=100&lines=👨💻+About+the+Developer;🚀+Vishesh+Panchal;💼+Full+Stack+Developer" alt="Developer Introduction" width="900">
   
   <br><br>
   
