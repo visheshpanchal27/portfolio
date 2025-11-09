@@ -47,7 +47,7 @@
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/✨-Features-FF6B35?style=for-the-badge&logoColor=white" alt="Features" width="100">
+  <img src="https://img.shields.io/badge/✨-Features-FF6B35?style=for-the-badge&logoColor=white" alt="Features" width="200">
   
   <table>
     <tr>
@@ -137,7 +137,7 @@
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🛠️-Tech_Stack-38B2AC?style=for-the-badge" alt="Tech Stack" width="100">
+  <img src="https://img.shields.io/badge/🛠️-Tech_Stack-38B2AC?style=for-the-badge" alt="Tech Stack" width="200">
   
   <br><br>
   
@@ -196,7 +196,7 @@
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🚀-Quick_Start-00D4AA?style=for-the-badge" alt="Quick Start" width="100">
+  <img src="https://img.shields.io/badge/🚀-Quick_Start-00D4AA?style=for-the-badge" alt="Quick Start" width="200">
   
   <br><br>
   
@@ -283,7 +283,7 @@ npm start
 ## 📁 Project Structure
 
 <div align="center">
-  <img src="https://img.shields.io/badge/📁-Project_Structure-FF6B35?style=for-the-badge" alt="Project Structure" width="100">
+  <img src="https://img.shields.io/badge/📁-Project_Structure-FF6B35?style=for-the-badge" alt="Project Structure" width="200">
 </div>
 
 ```
@@ -318,7 +318,7 @@ npm start
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🎯-Featured_Projects-4CAF50?style=for-the-badge" alt="Featured Projects" width="100">
+  <img src="https://img.shields.io/badge/🎯-Featured_Projects-4CAF50?style=for-the-badge" alt="Featured Projects" width="200">
   
   <br><br>
   
@@ -333,7 +333,7 @@ npm start
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="https://img.shields.io/badge/🛒-E_Commerce_Platform-FF6B35?style=for-the-badge&logo=shopify" alt="E-Commerce Platform" width="400">
+        <img src="https://img.shields.io/badge/🛒-E_Commerce_Platform-FF6B35?style=for-the-badge&logo=shopify" alt="E-Commerce Platform" width="100%">
         <h3>🛒 MERN E-Commerce Platform</h3>
         <p><strong>🎯 Impact:</strong> 500+ users, $10K+ transactions</p>
         <p><strong>🛠️ Tech:</strong> React, Node.js, MongoDB, Express, PayPal</p>
@@ -344,7 +344,7 @@ npm start
         </a>
       </td>
       <td align="center" width="50%">
-        <img src="https://img.shields.io/badge/🤖-AI_DeepFake_Detector-0055FF?style=for-the-badge&logo=tensorflow" alt="AI DeepFake Detector" width="400">
+        <img src="https://img.shields.io/badge/🤖-AI_DeepFake_Detector-0055FF?style=for-the-badge&logo=tensorflow" alt="AI DeepFake Detector" width="100%">
         <h3>🤖 AI DeepFake Detector</h3>
         <p><strong>🎯 Accuracy:</strong> 79.2% detection rate</p>
         <p><strong>🛠️ Tech:</strong> Python, OpenCV, TensorFlow, Computer Vision</p>
@@ -357,7 +357,7 @@ npm start
     </tr>
     <tr>
       <td align="center">
-        <img src="https://img.shields.io/badge/🏪-LV_Shopping_Center-4CAF50?style=for-the-badge&logo=java" alt="LV Shopping Center" width="400">
+        <img src="https://img.shields.io/badge/🏪-LV_Shopping_Center-4CAF50?style=for-the-badge&logo=java" alt="LV Shopping Center" width="100%">
         <h3>🏪 LV Shopping Center</h3>
         <p><strong>🎯 Scale:</strong> Enterprise-level application</p>
         <p><strong>🛠️ Tech:</strong> Java, JSP, Servlets, MySQL</p>
@@ -368,7 +368,7 @@ npm start
         </a>
       </td>
       <td align="center">
-        <img src="https://img.shields.io/badge/🏦-Banking_System-2196F3?style=for-the-badge&logo=java" alt="Banking Management System" width="400">
+        <img src="https://img.shields.io/badge/🏦-Banking_System-2196F3?style=for-the-badge&logo=java" alt="Banking Management System" width="100%">
         <h3>🏦 Banking Management System</h3>
         <p><strong>🎯 Security:</strong> Bank-grade security implementation</p>
         <p><strong>🛠️ Tech:</strong> Core Java, File Handling, OOP</p>
@@ -400,7 +400,7 @@ npm start
 ## 🎨 Customization Guide
 
 <div align="center">
-  <img src="https://img.shields.io/badge/🎨-Customization-9C27B0?style=for-the-badge" alt="Customization" width="100">
+  <img src="https://img.shields.io/badge/🎨-Customization-9C27B0?style=for-the-badge" alt="Customization" width="200">
 </div>
 
 <details>
@@ -444,7 +444,7 @@ npm start
 ## 📧 Contact Form Setup
 
 <div align="center">
-  <img src="https://img.shields.io/badge/📧-Contact_Setup-E91E63?style=for-the-badge" alt="Contact Setup" width="100">
+  <img src="https://img.shields.io/badge/📧-Contact_Setup-E91E63?style=for-the-badge" alt="Contact Setup" width="200">
 </div>
 
 The contact form uses EmailJS for sending emails. To set it up:
@@ -459,7 +459,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🌟-Performance-FFC107?style=for-the-badge" alt="Performance" width="100">
+  <img src="https://img.shields.io/badge/🌟-Performance-FFC107?style=for-the-badge" alt="Performance" width="200">
   
   <br><br>
   
@@ -504,7 +504,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🚀-Deployment-795548?style=for-the-badge" alt="Deployment" width="100">
+  <img src="https://img.shields.io/badge/🚀-Deployment-795548?style=for-the-badge" alt="Deployment" width="200">
   
   <br><br>
   
@@ -555,7 +555,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/📱-Browser_Support-607D8B?style=for-the-badge" alt="Browser Support" width="100">
+  <img src="https://img.shields.io/badge/📱-Browser_Support-607D8B?style=for-the-badge" alt="Browser Support" width="200">
   
   <br><br>
   
@@ -600,7 +600,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://img.shields.io/badge/🤝-Contributing-8BC34A?style=for-the-badge" alt="Contributing" width="100">
+  <img src="https://img.shields.io/badge/🤝-Contributing-8BC34A?style=for-the-badge" alt="Contributing" width="200">
   
   <br><br>
   
