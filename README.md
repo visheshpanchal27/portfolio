@@ -24,6 +24,7 @@
   
   [![Live Demo](https://img.shields.io/badge/🔥_Live_Demo-Visit_Now-FF6B35?style=for-the-badge&logo=vercel)](https://portfolio.vishesh.work.gd)
   [![Portfolio](https://img.shields.io/badge/📱_Mobile_View-Responsive-4CAF50?style=for-the-badge&logo=mobile)](https://portfolio.vishesh.work.gd)
+  [![Documentation](https://img.shields.io/badge/📚_Documentation-Complete-blue?style=for-the-badge&logo=gitbook)](https://github.com/visheshpanchal27/portfolio#readme)
   
   <br>
   
@@ -209,6 +210,9 @@
 
 ```bash
 # 🔍 Check your versions
+node --version  # v16.0.0 or higher ✅
+npm --version   # v8.0.0 or higher ✅
+git --version   # v2.0.0 or higher ✅
 node --version  # v16.0.0 or higher ✅
 npm --version   # v8.0.0 or higher ✅
 git --version   # v2.0.0 or higher ✅
@@ -730,6 +734,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   **Made with ❤️, ⚛️ React, and countless cups of ☕**
   
   *"Code is poetry written in logic."*
+  
+  <br>
+  
+  ### 📈 Repository Stats
+  
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=visheshpanchal27&theme=tokyonight" alt="Profile Summary" width="100%" />
   
 </div>
 
