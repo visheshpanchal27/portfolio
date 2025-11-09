@@ -38,7 +38,7 @@
 <br>
 
 <div align="center">
-  <img src="https://via.placeholder.com/900x200/1a1a1a/ffffff?text=▶️+Click+to+View+Portfolio+Demo" alt="Portfolio Demo" width="900">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=24&duration=3000&pause=1000&color=FF6B35&center=true&vCenter=true&width=900&height=200&lines=🔥+Live+Portfolio+Demo;📱+Responsive+Design;⚡+Fast+Performance;🎨+Modern+UI%2FUX" alt="Portfolio Demo" width="900">
 </div>
 
 ---
@@ -47,49 +47,49 @@
 
 <div align="center">
   
-  <img src="https://via.placeholder.com/100x100/FF6B35/ffffff?text=▶️" alt="Play Features" width="100">
+  <img src="https://img.shields.io/badge/✨-Features-FF6B35?style=for-the-badge&logoColor=white" alt="Features" width="100">
   
   <table>
     <tr>
       <td align="center" width="200px">
-        <img src="https://via.placeholder.com/80x80/61DAFB/ffffff?text=🎨" alt="Modern UI/UX" width="80"><br>
+        <img src="https://img.shields.io/badge/🎨-Modern_UI-61DAFB?style=for-the-badge" alt="Modern UI/UX" width="80"><br>
         <strong>Modern UI/UX</strong><br>
         <sub>Cutting-edge design</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://via.placeholder.com/80x80/4CAF50/ffffff?text=⚡" alt="Performance" width="80"><br>
+        <img src="https://img.shields.io/badge/⚡-Performance-4CAF50?style=for-the-badge" alt="Performance" width="80"><br>
         <strong>Performance</strong><br>
         <sub>Lightning fast</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://via.placeholder.com/80x80/FF9800/ffffff?text=📱" alt="Responsive" width="80"><br>
+        <img src="https://img.shields.io/badge/📱-Responsive-FF9800?style=for-the-badge" alt="Responsive" width="80"><br>
         <strong>Responsive</strong><br>
         <sub>All devices</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://via.placeholder.com/80x80/9C27B0/ffffff?text=🔍" alt="SEO Optimized" width="80"><br>
+        <img src="https://img.shields.io/badge/🔍-SEO_Optimized-9C27B0?style=for-the-badge" alt="SEO Optimized" width="80"><br>
         <strong>SEO Optimized</strong><br>
         <sub>Search friendly</sub>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="https://via.placeholder.com/80x80/2196F3/ffffff?text=♿" alt="Accessible" width="80"><br>
+        <img src="https://img.shields.io/badge/♿-Accessible-2196F3?style=for-the-badge" alt="Accessible" width="80"><br>
         <strong>Accessible</strong><br>
         <sub>WCAG compliant</sub>
       </td>
       <td align="center">
-        <img src="https://via.placeholder.com/80x80/795548/ffffff?text=🌙" alt="Dark/Light Mode" width="80"><br>
+        <img src="https://img.shields.io/badge/🌙-Dark_Mode-795548?style=for-the-badge" alt="Dark/Light Mode" width="80"><br>
         <strong>Dark/Light Mode</strong><br>
         <sub>Theme switching</sub>
       </td>
       <td align="center">
-        <img src="https://via.placeholder.com/80x80/E91E63/ffffff?text=⚡" alt="PWA Ready" width="80"><br>
+        <img src="https://img.shields.io/badge/⚡-PWA_Ready-E91E63?style=for-the-badge" alt="PWA Ready" width="80"><br>
         <strong>PWA Ready</strong><br>
         <sub>App-like experience</sub>
       </td>
       <td align="center">
-        <img src="https://via.placeholder.com/80x80/607D8B/ffffff?text=🔒" alt="Secure" width="80"><br>
+        <img src="https://img.shields.io/badge/🔒-Secure-607D8B?style=for-the-badge" alt="Secure" width="80"><br>
         <strong>Secure</strong><br>
         <sub>Best practices</sub>
       </td>
