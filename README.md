@@ -16,14 +16,14 @@
   <img src="https://img.shields.io/github/forks/visheshpanchal27/portfolio?style=for-the-badge&logo=github&color=blue" alt="GitHub forks" />
   <img src="https://img.shields.io/github/watchers/visheshpanchal27/portfolio?style=for-the-badge&logo=github&color=green" alt="GitHub watchers" />
   <img src="https://img.shields.io/github/last-commit/visheshpanchal27/portfolio?style=for-the-badge&logo=github&color=red" alt="Last commit" />
-  <img src="https://img.shields.io/website?url=https%3A%2F%2Fportfolio.vishesh.work.gd&style=for-the-badge&logo=vercel&up_message=online&down_message=offline" alt="Website status" />
+  <img src="https://img.shields.io/website?url=https%3A%2F%2Fvishesh.work.gd&style=for-the-badge&logo=vercel&up_message=online&down_message=offline" alt="Website status" />
   
   <br><br>
   
   <h2>🌟 A stunning, responsive portfolio showcasing modern web development skills</h2>
   
-  [![Live Demo](https://img.shields.io/badge/🔥_Live_Demo-Visit_Now-FF6B35?style=for-the-badge&logo=vercel)](https://portfolio.vishesh.work.gd)
-  [![Portfolio](https://img.shields.io/badge/📱_Mobile_View-Responsive-4CAF50?style=for-the-badge&logo=mobile)](https://portfolio.vishesh.work.gd)
+  [![Live Demo](https://img.shields.io/badge/🔥_Live_Demo-Visit_Now-FF6B35?style=for-the-badge&logo=vercel)](https://vishesh.work.gd)
+  [![Portfolio](https://img.shields.io/badge/📱_Mobile_View-Responsive-4CAF50?style=for-the-badge&logo=mobile)](https://vishesh.work.gd)
   [![Documentation](https://img.shields.io/badge/📚_Documentation-Complete-blue?style=for-the-badge&logo=gitbook)](https://github.com/visheshpanchal27/portfolio#readme)
   
   <br>
@@ -38,7 +38,7 @@
 <br>
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="900">
+  <img src="https://via.placeholder.com/900x200/1a1a1a/ffffff?text=▶️+Click+to+View+Portfolio+Demo" alt="Portfolio Demo" width="900">
 </div>
 
 ---
@@ -47,49 +47,49 @@
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/FF6B35/ffffff?text=▶️" alt="Play Features" width="100">
   
   <table>
     <tr>
       <td align="center" width="200px">
-        <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/61DAFB/ffffff?text=🎨" alt="Modern UI/UX" width="80"><br>
         <strong>Modern UI/UX</strong><br>
         <sub>Cutting-edge design</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/4CAF50/ffffff?text=⚡" alt="Performance" width="80"><br>
         <strong>Performance</strong><br>
         <sub>Lightning fast</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/FF9800/ffffff?text=📱" alt="Responsive" width="80"><br>
         <strong>Responsive</strong><br>
         <sub>All devices</sub>
       </td>
       <td align="center" width="200px">
-        <img src="https://user-images.githubusercontent.com/74038190/212257468-1e9a91f1-b626-4baa-b15d-5c385dfa7763.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/9C27B0/ffffff?text=🔍" alt="SEO Optimized" width="80"><br>
         <strong>SEO Optimized</strong><br>
         <sub>Search friendly</sub>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212257460-738ff738-247f-4445-a718-cdd0ca76e2db.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/2196F3/ffffff?text=♿" alt="Accessible" width="80"><br>
         <strong>Accessible</strong><br>
         <sub>WCAG compliant</sub>
       </td>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/795548/ffffff?text=🌙" alt="Dark/Light Mode" width="80"><br>
         <strong>Dark/Light Mode</strong><br>
         <sub>Theme switching</sub>
       </td>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212257463-4d082cb4-7483-4eaf-bc25-6dde2628aabd.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/E91E63/ffffff?text=⚡" alt="PWA Ready" width="80"><br>
         <strong>PWA Ready</strong><br>
         <sub>App-like experience</sub>
       </td>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212257456-4d48611c-1f44-4435-9ddd-7cd6bdc4dd5e.gif" width="80"><br>
+        <img src="https://via.placeholder.com/80x80/607D8B/ffffff?text=🔒" alt="Secure" width="80"><br>
         <strong>Secure</strong><br>
         <sub>Best practices</sub>
       </td>
@@ -124,7 +124,7 @@
 <summary>💼 <strong>Portfolio Sections</strong></summary>
 
 - 🎯 **Hero Section** - Engaging introduction with animated typewriter
-- 👨‍💻 **About Me** - Personal story with animated skill progress bars
+- 👨💻 **About Me** - Personal story with animated skill progress bars
 - 🛠️ **Skills Showcase** - Categorized skills with interactive tabs
 - 🎨 **Featured Projects** - 4 real projects with detailed descriptions
 - 📧 **Contact Form** - Functional contact form with EmailJS integration
@@ -137,7 +137,7 @@
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/38B2AC/ffffff?text=🛠️" alt="Tech Stack" width="100">
   
   <br><br>
   
@@ -196,7 +196,7 @@
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/00D4AA/ffffff?text=🚀" alt="Quick Start" width="100">
   
   <br><br>
   
@@ -213,9 +213,6 @@
 node --version  # v16.0.0 or higher ✅
 npm --version   # v8.0.0 or higher ✅
 git --version   # v2.0.0 or higher ✅
-node --version  # v16.0.0 or higher ✅
-npm --version   # v8.0.0 or higher ✅
-git --version   # v2.0.0 or higher ✅
 ```
 
 ### ⚡ Installation
@@ -226,11 +223,11 @@ git --version   # v2.0.0 or higher ✅
     <tr>
       <td align="center" width="50%">
         <h4>🔥 Quick Setup</h4>
-        <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="200">
+        <img src="https://via.placeholder.com/200x150/FF6B35/ffffff?text=▶️+Setup+Demo" alt="Quick Setup" width="200">
       </td>
       <td align="center" width="50%">
         <h4>🛠️ Manual Setup</h4>
-        <img src="https://user-images.githubusercontent.com/74038190/212284136-03988914-d899-44b4-b1d9-4eeccf656e44.gif" width="200">
+        <img src="https://via.placeholder.com/200x150/4CAF50/ffffff?text=▶️+Manual+Demo" alt="Manual Setup" width="200">
       </td>
     </tr>
   </table>
@@ -286,7 +283,7 @@ npm start
 ## 📁 Project Structure
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/FF6B35/ffffff?text=📁" alt="Project Structure" width="100">
 </div>
 
 ```
@@ -301,7 +298,7 @@ npm start
 │   ├── 📁 components/          # ⚛️ React components
 │   │   ├── Header.js           # 🧭 Navigation with theme toggle
 │   │   ├── Hero.js             # 🎯 Landing section with typewriter
-│   │   ├── About.js            # 👨‍💻 About section with stats
+│   │   ├── About.js            # 👨💻 About section with stats
 │   │   ├── Skills.js           # 🛠️ Skills showcase with tabs
 │   │   ├── Projects.js         # 🎨 Project gallery with filtering
 │   │   ├── Contact.js          # 📧 Contact form with EmailJS
@@ -321,7 +318,7 @@ npm start
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/4CAF50/ffffff?text=🎯" alt="Featured Projects" width="100">
   
   <br><br>
   
@@ -336,7 +333,7 @@ npm start
   <table>
     <tr>
       <td align="center" width="50%">
-        <img src="https://user-images.githubusercontent.com/74038190/212284136-03988914-d899-44b4-b1d9-4eeccf656e44.gif" width="400">
+        <img src="https://via.placeholder.com/400x200/FF6B35/ffffff?text=▶️+E-Commerce+Demo" alt="E-Commerce Platform" width="400">
         <h3>🛒 MERN E-Commerce Platform</h3>
         <p><strong>🎯 Impact:</strong> 500+ users, $10K+ transactions</p>
         <p><strong>🛠️ Tech:</strong> React, Node.js, MongoDB, Express, PayPal</p>
@@ -347,7 +344,7 @@ npm start
         </a>
       </td>
       <td align="center" width="50%">
-        <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="400">
+        <img src="https://via.placeholder.com/400x200/0055FF/ffffff?text=▶️+AI+Demo" alt="AI DeepFake Detector" width="400">
         <h3>🤖 AI DeepFake Detector</h3>
         <p><strong>🎯 Accuracy:</strong> 79.2% detection rate</p>
         <p><strong>🛠️ Tech:</strong> Python, OpenCV, TensorFlow, Computer Vision</p>
@@ -360,7 +357,7 @@ npm start
     </tr>
     <tr>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="400">
+        <img src="https://via.placeholder.com/400x200/4CAF50/ffffff?text=▶️+Shopping+Demo" alt="LV Shopping Center" width="400">
         <h3>🏪 LV Shopping Center</h3>
         <p><strong>🎯 Scale:</strong> Enterprise-level application</p>
         <p><strong>🛠️ Tech:</strong> Java, JSP, Servlets, MySQL</p>
@@ -371,7 +368,7 @@ npm start
         </a>
       </td>
       <td align="center">
-        <img src="https://user-images.githubusercontent.com/74038190/212284158-e840e285-664b-44d7-b79b-e264b5e54825.gif" width="400">
+        <img src="https://via.placeholder.com/400x200/2196F3/ffffff?text=▶️+Banking+Demo" alt="Banking Management System" width="400">
         <h3>🏦 Banking Management System</h3>
         <p><strong>🎯 Security:</strong> Bank-grade security implementation</p>
         <p><strong>🛠️ Tech:</strong> Core Java, File Handling, OOP</p>
@@ -403,7 +400,7 @@ npm start
 ## 🎨 Customization Guide
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212257454-16e3712e-945a-4ca2-b238-408ad0bf87e6.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/9C27B0/ffffff?text=🎨" alt="Customization" width="100">
 </div>
 
 <details>
@@ -447,7 +444,7 @@ npm start
 ## 📧 Contact Form Setup
 
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/74038190/212257467-871d32b7-e401-42e8-a166-fcfd7baa4c6b.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/E91E63/ffffff?text=📧" alt="Contact Setup" width="100">
 </div>
 
 The contact form uses EmailJS for sending emails. To set it up:
@@ -462,7 +459,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212257472-08e52665-c503-4bd9-aa20-f5a4dae769b5.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/FFC107/ffffff?text=🌟" alt="Performance" width="100">
   
   <br><br>
   
@@ -507,7 +504,7 @@ The contact form uses EmailJS for sending emails. To set it up:
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212284136-03988914-d899-44b4-b1d9-4eeccf656e44.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/795548/ffffff?text=🚀" alt="Deployment" width="100">
   
   <br><br>
   
@@ -558,7 +555,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212257465-7ce8d493-cac5-494e-982a-5a9deb852c4b.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/607D8B/ffffff?text=📱" alt="Browser Support" width="100">
   
   <br><br>
   
@@ -603,7 +600,7 @@ npm run build
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width="100">
+  <img src="https://via.placeholder.com/100x100/8BC34A/ffffff?text=🤝" alt="Contributing" width="100">
   
   <br><br>
   
@@ -644,11 +641,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 👨‍💻 About the Developer
+## 👨💻 About the Developer
 
 <div align="center">
   
-  <img src="https://user-images.githubusercontent.com/74038190/213910845-af37a709-8995-40d6-be59-724526e3c3d7.gif" width="900">
+  <img src="https://via.placeholder.com/900x200/1a1a1a/ffffff?text=▶️+Developer+Introduction" alt="Developer Introduction" width="900">
   
   <br><br>
   
@@ -685,7 +682,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   
   ### 🌐 Connect with Me
   
-  <a href="https://portfolio.vishesh.work.gd">
+  <a href="https://vishesh.work.gd">
     <img src="https://img.shields.io/badge/🌐_Portfolio-Visit_Now-FF6B35?style=for-the-badge&logo=firefox&logoColor=white" alt="Portfolio" />
   </a>
   <a href="https://www.linkedin.com/in/vishesh-panchal-144281353">
