@@ -142,6 +142,15 @@
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="Y1n78g7X/ojb4iZzRHmWyg" async></script>
   </head>
   <body>
+    <script>
+      // Detect crawlers and redirect to static version
+      var userAgent = navigator.userAgent.toLowerCase();
+      var isCrawler = /bot|crawler|spider|crawling|googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|facebookexternalhit|twitterbot|rogerbot|linkedinbot|embedly|quora link preview|showyoubot|outbrain|pinterest|developers\.google\.com\/\+\/web\/snippet/.test(userAgent);
+      
+      if (isCrawler && window.location.pathname === '/') {
+        window.location.replace('/portfolio.html');
+      }
+    </script>
 
     <noscript>
       <main>
@@ -226,7 +235,15 @@
       <h3>Contact Information and Availability</h3>
       <p>Available for freelance web development projects, full-time positions, and technical consulting. Contact: visheshpanchal864@gmail.com, LinkedIn: vishesh-panchal-144281353, GitHub: visheshpanchal27. Open to remote work and international collaborations.</p>
     </div>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Fallback content while React loads -->
+      <div style="padding: 20px; font-family: Arial, sans-serif;">
+        <h1>Vishesh Panchal - Full Stack Developer</h1>
+        <p>Loading portfolio... If this page doesn't load, visit <a href="/portfolio.html">static version</a></p>
+        <p>Professional MERN Stack Developer specializing in React.js, Node.js, MongoDB, and AI applications.</p>
+        <p>Email: visheshpanchal864@gmail.com | GitHub: github.com/visheshpanchal27</p>
+      </div>
+    </div>
     
 
   </body>

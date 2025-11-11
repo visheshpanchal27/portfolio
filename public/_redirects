@@ -1,0 +1,6 @@
+# Prerender for crawlers
+/*    /portfolio.html   200   User-Agent: *bot*
+/*    /portfolio.html   200   User-Agent: *crawler*
+/*    /portfolio.html   200   User-Agent: *spider*
+/*    /portfolio.html   200   User-Agent: Googlebot*
+/*    /index.html       200
