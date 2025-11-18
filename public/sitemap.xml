@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://www.vishesh.work.gd/</loc>
-    <lastmod>2025-11-11</lastmod>
+    <loc>https://vishesh.work.gd/</loc>
+    <lastmod>2025-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.vishesh.work.gd/portfolio.html</loc>
-    <lastmod>2025-11-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png</image:loc>
+      <image:title>Vishesh Panchal - Full Stack Developer</image:title>
+      <image:caption>Professional portfolio of Vishesh Panchal, MERN Stack Developer</image:caption>
+    </image:image>
   </url>
 </urlset>
