@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen Demo</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+        }
+        
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to bottom right, #60a5fa, #a855f7, #ec4899);
+            font-family: 'Inter', sans-serif;
+            z-index: 9999;
+            transition: background 0.3s ease;
+        }
+        
+        .loading-container.dark {
+            background: linear-gradient(to bottom right, #111827, #581c87, #000000);
+        }
+        
+        .loading-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+        }
+        
+        /* Premium Logo Container */
+        .logo-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            animation: logoBreath 4s ease-in-out infinite;
+        }
+        
+        .logo-circle {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 30px 60px rgba(79, 70, 229, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 3;
+            backdrop-filter: blur(20px);
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark .logo-circle {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #06b6d4 100%);
+            box-shadow: 0 30px 60px rgba(139, 92, 246, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Orbital Rings */
+        .orbit-ring {
+            position: absolute;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: orbit 8s linear infinite;
+        }
+        
+        .orbit-1 {
+            width: 140px;
+            height: 140px;
+            top: -10px;
+            left: -10px;
+            border-top-color: #4f46e5;
+            border-top-width: 2px;
+            animation-duration: 6s;
+        }
+        
+        .orbit-2 {
+            width: 160px;
+            height: 160px;
+            top: -20px;
+            left: -20px;
+            border-right-color: #db2777;
+            border-right-width: 2px;
+            animation-duration: 8s;
+            animation-direction: reverse;
+        }
+        
+        .orbit-3 {
+            width: 180px;
+            height: 180px;
+            top: -30px;
+            left: -30px;
+            border-bottom-color: #0891b2;
+            border-bottom-width: 2px;
+            animation-duration: 10s;
+        }
+        
+        /* Premium Progress Bar */
+        .progress-container {
+            width: 280px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+            position: relative;
+            animation: fadeInUp 1s ease-out 0.5s both;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark .progress-container {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #4f46e5, #7c3aed, #db2777, #0891b2);
+            background-size: 200% 100%;
+            border-radius: 3px;
+            animation: progressFlow 3s ease-in-out infinite;
+            box-shadow: 0 0 25px rgba(79, 70, 229, 0.8), 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .dark .progress-bar-fill {
+            background: linear-gradient(90deg, #8b5cf6, #ec4899, #06b6d4, #8b5cf6);
+            box-shadow: 0 0 20px rgba(139, 92, 246, 0.6);
+        }
+        
+        /* Elegant Typography */
+        .brand-text {
+            text-align: center;
+            animation: fadeInUp 1s ease-out 0.8s both;
+        }
+        
+        .brand-name {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+            animation: textShimmer 3s ease-in-out infinite;
+        }
+        
+        .brand-tagline {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        
+        .dark .brand-tagline {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Floating Particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: particleFloat 6s ease-in-out infinite;
+        }
+        
+        .particle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { top: 80%; left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { top: 30%; right: 15%; animation-delay: 2s; }
+        .particle:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 3s; }
+        .particle:nth-child(5) { top: 60%; left: 5%; animation-delay: 4s; }
+        
+        @keyframes logoBreath {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(2deg); }
+        }
+        
+        @keyframes orbit {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes progressFlow {
+            0% { width: 0%; background-position: 0% 50%; }
+            50% { width: 70%; background-position: 100% 50%; }
+            100% { width: 100%; background-position: 200% 50%; }
+        }
+        
+        @keyframes textShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+            50% { transform: translateY(-30px) scale(1.2); opacity: 0.8; }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 Toggle Theme</button>
+    
+    <div class="loading-container" id="loadingContainer">
+        <div class="loading-content">
+            <!-- Premium Logo with Orbital Rings -->
+            <div class="logo-container">
+                <div class="logo-circle">VP</div>
+                <div class="orbit-ring orbit-1"></div>
+                <div class="orbit-ring orbit-2"></div>
+                <div class="orbit-ring orbit-3"></div>
+            </div>
+            
+            <!-- Premium Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar-fill"></div>
+            </div>
+            
+            <!-- Elegant Brand Text -->
+            <div class="brand-text">
+                <div class="brand-name">VISHESH PANCHAL</div>
+                <div class="brand-tagline">Full Stack Developer</div>
+            </div>
+            
+            <!-- Floating Particles -->
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <script>
+        let isDark = false;
+        
+        function toggleTheme() {
+            isDark = !isDark;
+            const container = document.getElementById('loadingContainer');
+            
+            if (isDark) {
+                container.classList.add('dark');
+            } else {
+                container.classList.remove('dark');
+            }
+        }
+        
+        // Auto-detect system theme
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            toggleTheme();
+        }
+    </script>
+</body>
+</html>

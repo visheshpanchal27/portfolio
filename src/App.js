@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -34,7 +33,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 800);
     return () => clearTimeout(timer);
   }, []);
 
@@ -44,31 +43,24 @@ function App() {
     <HelmetProvider>
       <SEOHead />
       <DomainHandler />
-      <AnimatePresence mode="wait">
-        {loading ? (
-          <LoadingScreen key="loading" />
-        ) : (
-          <div key="app" className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
-            <motion.div
-              className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6 }}
-            >
-              <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-              <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <ContentSection />
-              <ServicesSection />
-              <BlogSection />
-              <Contact />
-              <Footer />
-            </motion.div>
+      {loading ? (
+        <LoadingScreen />
+      ) : (
+        <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
+          <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+            <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+            <Hero />
+            <About />
+            <Skills />
+            <Projects />
+            <ContentSection />
+            <ServicesSection />
+            <BlogSection />
+            <Contact />
+            <Footer />
           </div>
-        )}
-      </AnimatePresence>
+        </div>
+      )}
     </HelmetProvider>
   );
 }
