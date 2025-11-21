@@ -1,0 +1,4 @@
+Contact: mailto:visheshpanchal864@gmail.com
+Expires: 2026-01-27T12:00:00.000Z
+Preferred-Languages: en
+Canonical: https://vishesh.work.gd/.well-known/security.txt

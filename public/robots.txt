@@ -1,16 +1,17 @@
 User-agent: *
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
 # Block unnecessary files
-Disallow: /static/
-Disallow: /*.json$
-Disallow: /*.js$
-Disallow: /*.css$
+Disallow: /static/js/
+Disallow: /static/css/
+Disallow: /*.map$
 
 # Allow important files
 Allow: /manifest.json
 Allow: /sitemap.xml
+Allow: /sitemap-index.xml
+Allow: /robots.txt
 
+# Sitemaps
 Sitemap: https://vishesh.work.gd/sitemap.xml
-Sitemap: https://vishesh.work.gd/sitemap-index.xml
