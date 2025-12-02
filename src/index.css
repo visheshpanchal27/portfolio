@@ -54,6 +54,7 @@ html {
   width: 8px;
 }
 
+/* Light mode scrollbar */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
@@ -70,6 +71,14 @@ html {
 /* Dark mode scrollbar */
 .dark ::-webkit-scrollbar-track {
   background: #374151;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #8b5cf6, #ec4899);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #7c3aed, #db2777);
 }
 
 /* Advanced Animations */
@@ -142,15 +151,21 @@ html {
 
 /* Glass Morphism */
 .glass {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .glass-dark {
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode glass */
+.dark .glass {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Gradient Text */
@@ -241,7 +256,16 @@ html {
 
 /* Smooth Transitions */
 * {
-  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Theme transition for root element */
+html {
+  transition: background-color 0.3s ease;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Typography Enhancements */

@@ -57,7 +57,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
         <div className="flex items-center gap-4">
           <motion.button
             onClick={toggleDarkMode}
-            className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 text-gray-800 dark:text-gray-200"
+            className="p-2 rounded-lg transition-colors duration-300 text-gray-800 dark:text-gray-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -70,7 +70,7 @@ const Header = ({ darkMode, toggleDarkMode }) => {
 
           <motion.button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-300 text-gray-800 dark:text-gray-200"
+            className="md:hidden p-2 rounded-lg transition-colors duration-300 text-gray-800 dark:text-gray-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

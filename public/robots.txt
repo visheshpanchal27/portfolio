@@ -1,26 +1,17 @@
 User-agent: *
 Allow: /
 
-# Block unnecessary files for better crawl budget
-Disallow: /static/js/
-Disallow: /static/css/
-Disallow: /*.map$
-Disallow: /node_modules/
-Disallow: /build/
-Disallow: /src/
-Disallow: /.git/
-
-# Allow important files
-Allow: /manifest.json
-Allow: /sitemap.xml
-Allow: /sitemap-index.xml
-Allow: /robots.txt
-Allow: /favicon.ico
-Allow: /*.png$
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.webp$
-
 # Sitemaps
 Sitemap: https://vishesh.work.gd/sitemap.xml
-Sitemap: https://vishesh.work.gd/sitemap-index.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Block common bot paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+Disallow: /*?*fbclid*
+Disallow: /*?*gclid*

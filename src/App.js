@@ -5,13 +5,11 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-
-
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
 import DomainHandler from './components/DomainHandler';
-
+import AdvancedSEO from './components/AdvancedSEO';
 import LoadingScreen from './components/LoadingScreen';
 import JsonLd from './components/JsonLd';
 
@@ -43,6 +41,7 @@ function App() {
   return (
     <HelmetProvider>
       <SEOHead />
+      <AdvancedSEO />
       <DomainHandler />
       <JsonLd />
       {loading ? (

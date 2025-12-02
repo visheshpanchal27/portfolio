@@ -41,6 +41,9 @@ const Hero = () => {
   }, [currentIndex, texts]);
 
   return (
+    <>
+      <link rel="canonical" href="https://vishesh.work.gd/" />
+      <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24" itemScope itemType="https://schema.org/Person">
       {/* Advanced Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-purple-900 dark:to-black"></div>
@@ -116,7 +119,7 @@ const Hero = () => {
         >
           {[
             { icon: 'fab fa-github', url: 'https://github.com/visheshpanchal27', color: 'hover:text-gray-400', label: 'GitHub' },
-            { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/vishesh-panchal-144281353', color: 'hover:text-blue-400', label: 'LinkedIn' },
+            { icon: 'fab fa-linkedin', url: 'https://linkedin.com/in/vishesh-panchal-144281353', color: 'hover:text-blue-400', label: 'LinkedIn' },
             { icon: 'fab fa-twitter', url: 'https://twitter.com/visheshpanchal', color: 'hover:text-sky-400', label: 'Twitter' }
           ].map((social, index) => (
             <motion.a
@@ -152,6 +155,7 @@ const Hero = () => {
         </motion.div>
       </motion.div>
     </section>
+    </>
   );
 };
 
