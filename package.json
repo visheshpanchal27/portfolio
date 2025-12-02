@@ -25,9 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:render": "npm ci --legacy-peer-deps --production=false && npm run build",
-    "build:seo": "npm run build && npm run prerender && npm run indexnow",
-    "prerender": "node scripts/prerender.js",
-    "indexnow": "node scripts/indexnow.js",
+
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,7 +50,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "puppeteer": "^21.0.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.9.5"
   }
