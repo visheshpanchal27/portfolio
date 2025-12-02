@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,10 +28,10 @@ const Contact = () => {
 
     try {
       await emailjs.send(
-        'service_rad30ti',
-        'template_6sww8lv',
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
         formData,
-        'u92ZvICoQgvFk7T10'
+        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
       );
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -142,7 +144,7 @@ const Contact = () => {
               
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('contact.form.name')}</label>
                   <input
                     type="text"
                     name="name"
@@ -154,7 +156,7 @@ const Contact = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     name="email"
@@ -168,7 +170,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Subject</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('contact.form.subject')}</label>
                 <input
                   type="text"
                   name="subject"
@@ -181,7 +183,7 @@ const Contact = () => {
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">{t('contact.form.message')}</label>
                 <textarea
                   name="message"
                   rows="6"

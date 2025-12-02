@@ -126,7 +126,9 @@ const SEOHead = ({
         {/* Alternate URLs for different domains */}
         {seoConfig.domains.map((domain, index) => {
           if (domain !== domainConfig.primaryDomain) {
-            return <link key={index} rel="alternate" href={domain + window.location.pathname + window.location.hash} />;
+            const safePath = encodeURI(window.location.pathname);
+            const safeHash = encodeURI(window.location.hash);
+            return <link key={index} rel="alternate" href={domain + safePath + safeHash} />;
           }
           return null;
         })}
@@ -175,7 +177,11 @@ const SEOHead = ({
         <link rel="alternate" hrefLang="x-default" href={canonicalUrl} />
         
         {/* Preload critical resources */}
-        <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" as="style" />
+        <link rel="preload" 
+              href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" 
+              as="style" 
+              integrity="sha384-PLACEHOLDER" 
+              crossorigin="anonymous" />
         <link rel="preload" href={seoConfig.image} as="image" />
         
         {/* DNS prefetch for performance */}

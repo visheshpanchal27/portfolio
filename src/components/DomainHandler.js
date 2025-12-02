@@ -28,20 +28,14 @@ const DomainHandler = () => {
       };
       
       // Domain-specific SEO enhancements
-      switch (hostname) {
-        case 'vishesh.work.gd':
-          addMetaTag('description', 'Official website of Vishesh Panchal - Full Stack Developer specializing in MERN Stack, AI applications, and modern web development.');
-          addMetaTag('keywords', 'Vishesh Panchal official, vishesh.work.gd, Full Stack Developer, MERN Stack Expert, React Developer');
-          addMetaTag('og:title', 'Vishesh Panchal | Official Portfolio - Full Stack Developer', true);
-          break;
-          
-        case 'www.vishesh.work.gd':
-          addMetaTag('description', 'Professional portfolio of Vishesh Panchal showcasing expertise in React, Node.js, MongoDB, AI projects, and e-commerce solutions.');
-          addMetaTag('keywords', 'Vishesh Panchal professional, www.vishesh.work.gd, MERN Stack Developer, React Expert, Professional Portfolio');
-          addMetaTag('og:title', 'Vishesh Panchal | Professional Portfolio - MERN Stack Developer', true);
-          break;
-          
-
+      if (hostname === 'vishesh.work.gd') {
+        addMetaTag('description', 'Official website of Vishesh Panchal - Full Stack Developer specializing in MERN Stack, AI applications, and modern web development.');
+        addMetaTag('keywords', 'Vishesh Panchal official, vishesh.work.gd, Full Stack Developer, MERN Stack Expert, React Developer');
+        addMetaTag('og:title', 'Vishesh Panchal | Official Portfolio - Full Stack Developer', true);
+      } else if (hostname === 'www.vishesh.work.gd') {
+        addMetaTag('description', 'Professional portfolio of Vishesh Panchal showcasing expertise in React, Node.js, MongoDB, AI projects, and e-commerce solutions.');
+        addMetaTag('keywords', 'Vishesh Panchal professional, www.vishesh.work.gd, MERN Stack Developer, React Expert, Professional Portfolio');
+        addMetaTag('og:title', 'Vishesh Panchal | Professional Portfolio - MERN Stack Developer', true);
       }
       
       // Add structured data for current domain

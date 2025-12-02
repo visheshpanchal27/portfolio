@@ -5,14 +5,15 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import ServicesSection from './components/ServicesSection';
-import BlogSection from './components/BlogSection';
+
+
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
 import DomainHandler from './components/DomainHandler';
-import ContentSection from './components/ContentSection';
+
 import LoadingScreen from './components/LoadingScreen';
+import JsonLd from './components/JsonLd';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -43,6 +44,7 @@ function App() {
     <HelmetProvider>
       <SEOHead />
       <DomainHandler />
+      <JsonLd />
       {loading ? (
         <LoadingScreen />
       ) : (
@@ -53,9 +55,6 @@ function App() {
             <About />
             <Skills />
             <Projects />
-            <ContentSection />
-            <ServicesSection />
-            <BlogSection />
             <Contact />
             <Footer />
           </div>

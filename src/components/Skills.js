@@ -92,7 +92,7 @@ const Skills = () => {
               className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
                 activeCategory === category
                   ? `bg-gradient-to-r ${skillCategories[category].color} text-white shadow-lg`
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 hover:text-gray-800 dark:hover:text-white'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -118,9 +118,9 @@ const Skills = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
             >
-              <div className="bg-white/90 dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden backdrop-blur-sm">
+              <div className="bg-white/90 dark:bg-gray-800/90 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-600 hover:border-purple-300 dark:hover:border-purple-400 hover:bg-white dark:hover:bg-gray-700 relative overflow-hidden backdrop-blur-sm">
                 {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].color} opacity-0 group-hover:opacity-5 transition-all duration-300`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].color} opacity-0 group-hover:opacity-5 dark:group-hover:opacity-10 transition-all duration-300`}></div>
                 
                 <div className="relative z-10">
                   <div className="flex items-center justify-between mb-4">
