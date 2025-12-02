@@ -19,12 +19,13 @@
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^12.3.1",
     "react-scripts": "^5.0.1",
+    "react-snap": "^1.23.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:render": "npm ci --legacy-peer-deps --production=false && npm run build",
+    "build:render": "npm ci --legacy-peer-deps && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
@@ -50,7 +51,6 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "react-snap": "^1.23.0",
     "tailwindcss": "^3.3.2",
     "typescript": "^4.9.5"
   },
