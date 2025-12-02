@@ -19,7 +19,6 @@
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^12.3.1",
     "react-scripts": "^5.0.1",
-
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -27,8 +26,7 @@
     "build": "react-scripts build",
     "build:render": "npm ci --legacy-peer-deps && npm run build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
