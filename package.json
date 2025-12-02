@@ -1,7 +1,7 @@
 {
   "name": "vishesh-portfolio-react",
   "engines": {
-    "node": "18.x",
+    "node": "20.x",
     "npm": ">=8.0.0"
   },
   "version": "0.1.0",
