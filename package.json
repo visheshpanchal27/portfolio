@@ -1,7 +1,7 @@
 {
   "name": "vishesh-portfolio-react",
   "engines": {
-    "node": ">=16.0.0",
+    "node": "18.x",
     "npm": ">=8.0.0"
   },
   "version": "0.1.0",
@@ -24,6 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:render": "npm ci --legacy-peer-deps --production=false && npm run build",
     "build:seo": "npm run build && npm run prerender && npm run indexnow",
     "prerender": "node scripts/prerender.js",
     "indexnow": "node scripts/indexnow.js",
