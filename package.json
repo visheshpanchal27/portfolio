@@ -1,7 +1,7 @@
 {
   "name": "vishesh-portfolio-react",
   "engines": {
-    "node": ">=16.0.0",
+    "node": "20.x",
     "npm": ">=8.0.0"
   },
   "version": "0.1.0",
@@ -12,15 +12,19 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^6.5.1",
+    "glob": "^10.5.0",
+    "i18next": "^22.5.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
-    "react-scripts": "5.0.1",
+    "react-i18next": "^12.3.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "node node_modules/react-scripts/bin/react-scripts.js build",
+    "build": "react-scripts build",
+    "build:render": "npm ci --legacy-peer-deps && npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -45,6 +49,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.9.5"
   }
 }
