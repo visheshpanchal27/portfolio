@@ -8,37 +8,37 @@ const Skills = () => {
     frontend: {
       title: 'Frontend Development',
       icon: 'fas fa-laptop-code',
-      color: 'from-blue-500 to-cyan-500',
+      color: 'bg-black dark:bg-white',
       skills: [
-        { name: 'React.js', level: 95, icon: 'fab fa-react', color: 'text-cyan-500' },
-        { name: 'JavaScript', level: 90, icon: 'fab fa-js-square', color: 'text-yellow-500' },
-        { name: 'Java', level: 85, icon: 'fas fa-coffee', color: 'text-red-600' },
-        { name: 'HTML5', level: 95, icon: 'fab fa-html5', color: 'text-orange-500' },
-        { name: 'CSS3', level: 90, icon: 'fab fa-css3-alt', color: 'text-blue-500' },
-        { name: 'Tailwind CSS', level: 88, icon: 'fas fa-wind', color: 'text-teal-500' }
+        { name: 'React.js', level: 95, icon: 'fab fa-react', color: 'text-black dark:text-white' },
+        { name: 'JavaScript', level: 90, icon: 'fab fa-js-square', color: 'text-black dark:text-white' },
+        { name: 'Java', level: 85, icon: 'fas fa-coffee', color: 'text-black dark:text-white' },
+        { name: 'HTML5', level: 95, icon: 'fab fa-html5', color: 'text-black dark:text-white' },
+        { name: 'CSS3', level: 90, icon: 'fab fa-css3-alt', color: 'text-black dark:text-white' },
+        { name: 'Tailwind CSS', level: 88, icon: 'fas fa-wind', color: 'text-black dark:text-white' }
       ]
     },
     backend: {
       title: 'Backend Development',
       icon: 'fas fa-server',
-      color: 'from-green-500 to-emerald-500',
+      color: 'bg-gray-900 dark:bg-gray-200',
       skills: [
-        { name: 'Node.js', level: 85, icon: 'fab fa-node-js', color: 'text-green-500' },
-        { name: 'Express.js', level: 80, icon: 'fas fa-code', color: 'text-gray-600' },
-        { name: 'MongoDB', level: 75, icon: 'fas fa-database', color: 'text-green-600' },
-        { name: 'MySQL', level: 70, icon: 'fas fa-database', color: 'text-blue-600' },
-        { name: 'REST APIs', level: 85, icon: 'fas fa-exchange-alt', color: 'text-purple-500' },
+        { name: 'Node.js', level: 85, icon: 'fab fa-node-js', color: 'text-black dark:text-white' },
+        { name: 'Express.js', level: 80, icon: 'fas fa-code', color: 'text-black dark:text-white' },
+        { name: 'MongoDB', level: 75, icon: 'fas fa-database', color: 'text-black dark:text-white' },
+        { name: 'MySQL', level: 70, icon: 'fas fa-database', color: 'text-black dark:text-white' },
+        { name: 'REST APIs', level: 85, icon: 'fas fa-exchange-alt', color: 'text-black dark:text-white' },
       ]
     },
     tools: {
       title: 'Tools & Technologies',
       icon: 'fas fa-tools',
-      color: 'from-purple-500 to-pink-500',
+      color: 'bg-gray-800 dark:bg-gray-300',
       skills: [
-        { name: 'Git & GitHub', level: 90, icon: 'fab fa-git-alt', color: 'text-orange-600' },
-        { name: 'VS Code', level: 95, icon: 'fas fa-code', color: 'text-blue-600' },
-        { name: 'AWS', level: 65, icon: 'fab fa-aws', color: 'text-orange-500' },
-        { name: 'Postman', level: 85, icon: 'fas fa-paper-plane', color: 'text-orange-500' }
+        { name: 'Git & GitHub', level: 90, icon: 'fab fa-git-alt', color: 'text-black dark:text-white' },
+        { name: 'VS Code', level: 95, icon: 'fas fa-code', color: 'text-black dark:text-white' },
+        { name: 'AWS', level: 65, icon: 'fab fa-aws', color: 'text-black dark:text-white' },
+        { name: 'Postman', level: 85, icon: 'fas fa-paper-plane', color: 'text-black dark:text-white' }
       ]
     }
   };
@@ -59,8 +59,8 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-20 px-4 bg-gradient-to-br from-indigo-100 via-blue-100 to-purple-100 dark:from-gray-800 dark:via-gray-900 dark:to-purple-900">
-      <div className="container mx-auto max-w-7xl">
+    <section id="skills" className="py-12 xs:py-16 sm:py-20 px-4 xs:px-6 bg-white dark:bg-black relative overflow-hidden safe-area-inset">
+      <div className="container mx-auto max-w-7xl relative z-10 responsive-padding">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: -50 }}
@@ -68,18 +68,18 @@ const Skills = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+          <h2 className="fluid-text-3xl xs:fluid-text-4xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black dark:text-white mb-3 xs:mb-4">
             Skills & Expertise
           </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="fluid-text-lg xs:fluid-text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Mastering modern technologies to build exceptional digital experiences
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-600 to-pink-600 mx-auto rounded-full mt-6"></div>
+          <div className="w-24 h-1 bg-black dark:bg-white mx-auto rounded-full mt-6"></div>
         </motion.div>
 
         {/* Category Tabs */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-2 xs:gap-3 sm:gap-4 mb-8 xs:mb-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -89,13 +89,16 @@ const Skills = () => {
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+              className={`px-4 xs:px-6 py-2 xs:py-3 rounded-full font-semibold transition-all duration-300 touch-target fluid-text-sm xs:fluid-text-base ${
                 activeCategory === category
-                  ? `bg-gradient-to-r ${skillCategories[category].color} text-white shadow-lg`
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? `${skillCategories[category].color} hover:opacity-90 text-white dark:text-black shadow-lg`
+                  : 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 border-2 border-gray-300 dark:border-gray-600'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              aria-pressed={activeCategory === category}
+              aria-controls="skills-grid"
+              aria-label={`Show ${skillCategories[category].title} skills`}
             >
               <i className={`${skillCategories[category].icon} mr-2`}></i>
               {skillCategories[category].title}
@@ -106,7 +109,8 @@ const Skills = () => {
         {/* Skills Grid */}
         <motion.div
           key={activeCategory}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+          id="skills-grid"
+          className="responsive-grid gap-4 xs:gap-6 sm:gap-8"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -116,30 +120,25 @@ const Skills = () => {
               key={skill.name}
               className="group relative"
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
+
             >
-              <div className="bg-white/90 dark:bg-gray-800 p-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-700 relative overflow-hidden backdrop-blur-sm">
-                {/* Background Gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${skillCategories[activeCategory].color} opacity-0 group-hover:opacity-5 transition-all duration-300`}></div>
+              <div className="bg-white dark:bg-gray-900 p-4 xs:p-6 rounded-xl xs:rounded-2xl shadow-xl transition-all duration-300 border-2 border-gray-200 dark:border-gray-700 relative overflow-hidden hover:shadow-2xl hover:border-black dark:hover:border-white">
+
                 
                 <div className="relative z-10">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <motion.i 
-                        className={`${skill.icon} text-2xl ${skill.color}`}
-                        whileHover={{ scale: 1.2, rotate: 360 }}
-                        transition={{ duration: 0.6 }}
-                      ></motion.i>
-                      <h3 className="font-bold text-gray-900 dark:text-white">{skill.name}</h3>
+                  <div className="flex items-center justify-between mb-3 xs:mb-4">
+                    <div className="flex items-center gap-2 xs:gap-3">
+                      <i className={`${skill.icon} text-xl xs:text-2xl ${skill.color}`}></i>
+                      <h3 className="font-bold text-black dark:text-white fluid-text-sm xs:fluid-text-base">{skill.name}</h3>
                     </div>
-                    <span className={`text-sm font-bold ${skill.color}`}>{skill.level}%</span>
+                    <span className={`fluid-text-sm font-bold ${skill.color}`}>{skill.level}%</span>
                   </div>
                   
                   {/* Progress Bar */}
                   <div className="relative">
-                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
+                    <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 xs:h-3 overflow-hidden">
                       <motion.div
-                        className={`h-full bg-gradient-to-r ${skillCategories[activeCategory].color} rounded-full relative`}
+                        className={`h-full ${skillCategories[activeCategory].color} rounded-full relative`}
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
@@ -155,19 +154,13 @@ const Skills = () => {
                   </div>
                   
                   {/* Skill Level Indicator */}
-                  <div className="mt-3 flex justify-between text-xs text-gray-500 dark:text-gray-400">
+                  <div className="mt-2 xs:mt-3 flex justify-between text-xs text-gray-500 dark:text-gray-400">
                     <span>Beginner</span>
                     <span>Expert</span>
                   </div>
                 </div>
 
-                {/* Hover Border Effect */}
-                <motion.div
-                  className={`absolute inset-0 border-2 border-transparent group-hover:border-gradient-to-r ${skillCategories[activeCategory].color} rounded-2xl transition-all duration-300 opacity-0 group-hover:opacity-100`}
-                  style={{
-                    background: `linear-gradient(white, white) padding-box, linear-gradient(45deg, transparent, rgba(147, 51, 234, 0.3), transparent) border-box`
-                  }}
-                />
+
               </div>
             </motion.div>
           ))}

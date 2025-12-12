@@ -1,25 +1,90 @@
 {
   "short_name": "Vishesh Panchal",
   "name": "Vishesh Panchal - Full Stack Developer Portfolio",
-  "description": "Portfolio of Vishesh Panchal, Full Stack Developer specializing in MERN Stack, AI applications, and modern web technologies",
+  "description": "Professional Full Stack Developer specializing in MERN Stack, AI/ML, and modern web technologies. View portfolio, projects, and get in touch.",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png",
-      "sizes": "192x192",
-      "type": "image/png"
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
     },
     {
-      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png",
+      "src": "logo192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "logo512.png",
+      "type": "image/png",
       "sizes": "512x512",
-      "type": "image/png"
+      "purpose": "maskable any"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
     }
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#6366f1",
+  "theme_color": "#000000",
   "background_color": "#ffffff",
-  "categories": ["developer", "portfolio", "full-stack", "react", "nodejs"],
-  "lang": "en",
+  "orientation": "portrait-primary",
   "scope": "/",
-  "orientation": "portrait-primary"
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "portfolio", "developer"],
+  "screenshots": [
+    {
+      "src": "screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot-narrow.png", 
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn about Vishesh Panchal",
+      "url": "/#about",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects", 
+      "description": "View portfolio projects",
+      "url": "/#projects",
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/#contact", 
+      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://vishesh.work.gd"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "capture_links": "existing-client-navigate"
 }

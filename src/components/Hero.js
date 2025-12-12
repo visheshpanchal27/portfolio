@@ -1,123 +1,374 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useResponsive } from './ResponsiveWrapper';
 
-const particleVariants = {
-  animate: {
-    y: [-20, 20],
-    opacity: [0.2, 1, 0.2],
-    scale: [0.8, 1.2, 0.8],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  }
+// Advanced particle system
+const ParticleField = ({ count = 50 }) => {
+  const particles = useMemo(() => 
+    Array.from({ length: count }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      size: Math.random() * 4 + 1,
+      duration: Math.random() * 20 + 10
+    })), [count]
+  );
+
+  return (
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute w-1 h-1 bg-primary-400/20 dark:bg-gray-800/30 rounded-full"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            width: `${particle.size}px`,
+            height: `${particle.size}px`,
+          }}
+          animate={{
+            y: [-20, 20],
+            opacity: [0.2, 0.8, 0.2],
+            scale: [0.8, 1.2, 0.8],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: Math.random() * 5
+          }}
+        />
+      ))}
+    </div>
+  );
 };
 
-const Hero = () => {
+// Advanced typewriter with multiple effects
+const TypewriterText = ({ texts, className }) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const indexRef = useRef(0);
-
-  const texts = ['Full Stack Developer', 'React Developer', 'Problem Solver'];
 
   useEffect(() => {
     const currentText = texts[currentIndex];
-    let typingInterval = setInterval(() => {
-      if (indexRef.current < currentText.length) {
+    const typingSpeed = isDeleting ? 50 : 120;
+    
+    const timer = setTimeout(() => {
+      if (!isDeleting && indexRef.current < currentText.length) {
         setDisplayText(currentText.slice(0, indexRef.current + 1));
         indexRef.current++;
-      } else {
-        clearInterval(typingInterval);
-        setTimeout(() => {
-          setDisplayText('');
-          indexRef.current = 0;
-          setCurrentIndex((prev) => (prev + 1) % texts.length);
-        }, 2000);
+      } else if (isDeleting && indexRef.current > 0) {
+        setDisplayText(currentText.slice(0, indexRef.current - 1));
+        indexRef.current--;
+      } else if (!isDeleting && indexRef.current === currentText.length) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && indexRef.current === 0) {
+        setIsDeleting(false);
+        setCurrentIndex((prev) => (prev + 1) % texts.length);
       }
-    }, 120);
+    }, typingSpeed);
 
-    return () => clearInterval(typingInterval);
-  }, [currentIndex, texts]);
+    return () => clearTimeout(timer);
+  }, [displayText, currentIndex, isDeleting, texts]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24" itemScope itemType="https://schema.org/Person">
-      {/* Advanced Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-purple-900 dark:to-black"></div>
+    <span className={className}>
+      {displayText}
+      <motion.span
+        className="ml-1"
+        animate={{ opacity: [1, 0] }}
+        transition={{ duration: 0.8, repeat: Infinity }}
+      >
+        |
+      </motion.span>
+    </span>
+  );
+};
+
+const Hero = () => {
+  const responsive = useResponsive();
+  const { scrollY } = useScroll();
+  const y = useTransform(scrollY, [0, 500], [0, 150]);
+  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
+  
+  const texts = [
+    'Full Stack Developer',
+    'React Specialist', 
+    'AI Enthusiast',
+    'Problem Solver',
+    'Innovation Driver'
+  ];
+
+  // Dynamic background based on device capabilities
+  const backgroundVariants = {
+    initial: { opacity: 0 },
+    animate: { 
+      opacity: 1,
+      transition: { duration: 1.5, ease: "easeOut" }
+    }
+  };
+
+  return (
+    <section 
+      id="home" 
+      className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20 sm:pt-24 lg:pt-32" 
+      itemScope 
+      itemType="https://schema.org/Person"
+    >
+      {/* Advanced layered background system */}
+      <motion.div 
+        className="absolute inset-0 bg-white dark:bg-black"
+        variants={backgroundVariants}
+        initial="initial"
+        animate="animate"
+      />
+      
+      {/* Particle field for desktop */}
+      {!responsive.isMobile && !responsive.prefersReducedMotion && (
+        <ParticleField count={responsive.isDesktop ? 60 : 30} />
+      )}
 
       <motion.div
-        className="relative z-10 text-center text-white max-w-4xl mx-auto px-4 sm:px-6"
+        className="relative z-10 text-center max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
-        {/* Profile Image */}
-        <div className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-6 sm:mb-8 relative">
-          <div 
-            className="w-full h-full rounded-full shadow-2xl bg-cover bg-center bg-no-repeat select-none"
-            style={{
-              backgroundImage: 'url(https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png)',
-              userSelect: 'none',
-              WebkitUserSelect: 'none',
-              MozUserSelect: 'none',
-              msUserSelect: 'none'
-            }}
-            onContextMenu={(e) => e.preventDefault()}
-            onDragStart={(e) => e.preventDefault()}
-            onSelectStart={(e) => e.preventDefault()}
-            itemProp="image"
-          >
-            <div className="w-full h-full rounded-full bg-transparent absolute inset-0 z-10"></div>
+        {/* Enhanced Profile Image with advanced effects */}
+        <motion.div 
+          className="relative flex justify-center mb-6 sm:mb-8 lg:mb-12"
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{ duration: 1, delay: 0.3, type: "spring", stiffness: 100 }}
+        >
+          <div className={`relative ${
+            responsive.isMobile ? 'w-24 h-24' : 
+            responsive.isTablet ? 'w-32 h-32' : 
+            'w-40 h-40 lg:w-48 lg:h-48'
+          }`}>
+            {/* Animated ring */}
+            <motion.div
+              className="absolute inset-0 rounded-full bg-gradient-to-br from-black via-gray-800 to-black dark:from-white dark:via-gray-200 dark:to-white p-1 dark:shadow-premium-lg"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+            >
+              <div className="w-full h-full rounded-full bg-white dark:bg-black dark:shadow-inner" />
+            </motion.div>
+            
+            {/* Profile image */}
+            <div 
+              className="absolute inset-2 rounded-full bg-cover bg-center bg-no-repeat shadow-2xl select-none overflow-hidden"
+              style={{
+                backgroundImage: 'url(https://res.cloudinary.com/dhyc478ch/image/upload/v1765255302/Untitled_design_comhaa.svg)',
+              }}
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
+              itemProp="image"
+            />
+            
+            
+
           </div>
-        </div>
+        </motion.div>
 
-        <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-white via-purple-200 to-pink-200 bg-clip-text text-transparent leading-tight" itemProp="name">
-          Vishesh Panchal
-        </h1>
+        {/* Enhanced name with gradient text */}
+        <motion.h1 
+          className={`font-bold mb-4 sm:mb-6 lg:mb-8 leading-tight ${
+            responsive.isMobile ? 'text-4xl' :
+            responsive.isTablet ? 'text-5xl' :
+            'text-6xl lg:text-7xl xl:text-8xl'
+          }`}
+          itemProp="name"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          <span className="text-black dark:text-white font-display elegant-heading">
+            Vishesh Panchal
+          </span>
+        </motion.h1>
 
-
-        <h2 className="text-lg sm:text-2xl md:text-3xl font-light mb-6 sm:mb-8 h-8 sm:h-12 flex items-center justify-center">
-          <span className="text-yellow-300 dark:text-yellow-300 font-medium" itemProp="jobTitle">{displayText}</span>
-          <span className="text-white dark:text-white ml-1 animate-pulse" aria-hidden="true">|</span>
-        </h2>
-
-        <p className="text-base sm:text-lg md:text-xl text-gray-100 dark:text-gray-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2" itemProp="description">
-          Expert Full Stack Developer specializing in <a href="#skills" className="text-yellow-300 hover:text-yellow-200 underline">MERN Stack</a>, <a href="#projects" className="text-yellow-300 hover:text-yellow-200 underline">AI applications</a>, and production-ready web solutions. View my <a href="#projects" className="text-yellow-300 hover:text-yellow-200 underline">featured projects</a>, explore my <a href="#services" className="text-yellow-300 hover:text-yellow-200 underline">services</a>, and <a href="#contact" className="text-yellow-300 hover:text-yellow-200 underline">get in touch</a>.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
-          <a
-            href="#projects"
-            className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold shadow-2xl w-full sm:w-auto text-center hover:shadow-xl transition-shadow duration-300"
-          >
-            <span className="flex items-center justify-center gap-2">
-              <i className="fas fa-rocket"></i>
-              <span className="text-sm sm:text-base">Explore My Work</span>
-            </span>
-          </a>
-
-          <a
-            href="#contact"
-            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-white/30 backdrop-blur-sm rounded-full text-white font-semibold hover:bg-white/10 transition-all duration-300 w-full sm:w-auto text-center"
-          >
-            <span className="flex items-center justify-center gap-2">
-              <i className="fas fa-paper-plane"></i>
-              <span className="text-sm sm:text-base">Let's Connect</span>
-            </span>
-          </a>
-        </div>
-
-        {/* Social Links */}
-        <motion.div
-          className="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12"
+        {/* Advanced typewriter with responsive sizing */}
+        <motion.h2 
+          className={`font-light mb-6 sm:mb-8 lg:mb-10 flex items-center justify-center min-h-[2rem] sm:min-h-[3rem] ${
+            responsive.isMobile ? 'text-lg' :
+            responsive.isTablet ? 'text-xl' :
+            'text-2xl lg:text-3xl'
+          }`}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <TypewriterText 
+            texts={texts}
+            className="text-black dark:text-white font-medium"
+          />
+        </motion.h2>
+
+        {/* Enhanced description with better typography */}
+        <motion.p 
+          className={`text-gray-700 dark:text-gray-300 mb-8 sm:mb-10 lg:mb-12 max-w-3xl mx-auto leading-relaxed ${
+            responsive.isMobile ? 'text-base px-4' :
+            responsive.isTablet ? 'text-lg px-6' :
+            'text-xl px-8'
+          }`}
+          itemProp="description"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          Crafting exceptional digital experiences with cutting-edge technologies. 
+          Specializing in{' '}
+          <motion.a 
+            href="#skills" 
+            className="text-black dark:text-white font-semibold hover:text-gray-700 dark:hover:text-gray-300 transition-colors relative group"
+            whileHover={{ scale: 1.05 }}
+          >
+            MERN Stack
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
+          </motion.a>
+          ,{' '}
+          <motion.a 
+            href="#projects" 
+            className="text-black dark:text-white font-semibold hover:text-gray-700 dark:hover:text-gray-300 transition-colors relative group"
+            whileHover={{ scale: 1.05 }}
+          >
+            AI applications
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-current transition-all duration-300 group-hover:w-full" />
+          </motion.a>
+          , and scalable web solutions that drive innovation.
+        </motion.p>
+
+        {/* Enhanced CTA buttons with advanced styling */}
+        <motion.div 
+          className={`flex gap-4 sm:gap-6 justify-center items-center ${
+            responsive.isMobile ? 'flex-col px-4' : 'flex-row px-6'
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <motion.a
+            href="#projects"
+            className={`group relative overflow-hidden rounded-full font-semibold shadow-lg hover:shadow-xl dark:shadow-premium dark:hover:shadow-premium-lg transition-all duration-300 touch-target bg-gradient-to-br from-black via-gray-900 to-black dark:from-white dark:via-gray-100 dark:to-white ${
+              responsive.isMobile ? 'w-full px-8 py-4' : 'px-8 py-4'
+            }`}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2 text-white dark:text-black">
+              <motion.i 
+                className="fas fa-rocket"
+                animate={{ rotate: [0, 10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <span>Explore My Work</span>
+            </span>
+
+          </motion.a>
+
+          <motion.a
+            href="#contact"
+            className={`group relative overflow-hidden rounded-full font-semibold border-2 border-black dark:border-white/20 dark:shadow-luxury transition-all duration-300 touch-target bg-white dark:bg-black/80 dark:backdrop-blur-xl ${
+              responsive.isMobile ? 'w-full px-8 py-4' : 'px-8 py-4'
+            }`}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.98 }}
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2 text-black dark:text-white">
+              <motion.i 
+                className="fas fa-paper-plane"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              />
+              <span>{responsive.isMobile ? 'Contact' : "Let's Connect"}</span>
+            </span>
+
+          </motion.a>
+        </motion.div>
+
+        {/* Enhanced Resume Buttons */}
+        <motion.div 
+          className={`flex gap-3 sm:gap-4 justify-center items-center mt-6 sm:mt-8 ${
+            responsive.isMobile ? 'flex-col px-4' : 'flex-row px-6'
+          }`}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.4 }}
+        >
+          <motion.a
+            href="/Vishesh_Panchal_Resume.pdf"
+            download="Vishesh_Panchal_Resume.pdf"
+            className={`group relative overflow-hidden rounded-full font-medium shadow-md hover:shadow-lg dark:shadow-premium dark:hover:shadow-premium-lg transition-all duration-300 touch-target bg-gradient-to-br from-black via-gray-900 to-black dark:from-white dark:via-gray-100 dark:to-white ${
+              responsive.isMobile ? 'w-full px-6 py-3' : 'px-6 py-3'
+            }`}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2 text-white dark:text-black text-sm">
+              <motion.i 
+                className="fas fa-download"
+                whileHover={{ y: -2 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              />
+              <span>Download Resume</span>
+            </span>
+          </motion.a>
+
+          <motion.a
+            href="/Vishesh_Panchal_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`group relative overflow-hidden rounded-full font-medium border-2 border-black dark:border-white/20 dark:shadow-luxury transition-all duration-300 touch-target bg-white dark:bg-black/80 dark:backdrop-blur-xl ${
+              responsive.isMobile ? 'w-full px-6 py-3' : 'px-6 py-3'
+            }`}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="relative z-10 flex items-center justify-center gap-2 text-black dark:text-white text-sm font-semibold">
+              <motion.i 
+                className="fas fa-eye"
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              />
+              <span>View Resume</span>
+            </span>
+
+          </motion.a>
+        </motion.div>
+
+        {/* Enhanced Social Links */}
+        <motion.div
+          className="flex justify-center gap-4 sm:gap-6 mt-8 sm:mt-12 lg:mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.6 }}
         >
           {[
-            { icon: 'fab fa-github', url: 'https://github.com/visheshpanchal27', color: 'hover:text-gray-400', label: 'GitHub' },
-            { icon: 'fab fa-linkedin', url: 'https://www.linkedin.com/in/vishesh-panchal-144281353', color: 'hover:text-blue-400', label: 'LinkedIn' },
-            { icon: 'fab fa-twitter', url: 'https://twitter.com/visheshpanchal', color: 'hover:text-sky-400', label: 'Twitter' }
+            { 
+              icon: 'fab fa-github', 
+              url: 'https://github.com/visheshpanchal27', 
+              label: 'GitHub' 
+            },
+            { 
+              icon: 'fab fa-linkedin', 
+              url: 'https://www.linkedin.com/in/vishesh-panchal-144281353', 
+              label: 'LinkedIn' 
+            },
+            { 
+              icon: 'fab fa-twitter', 
+              url: 'https://twitter.com/visheshpanchal', 
+              label: 'Twitter' 
+            }
           ].map((social, index) => (
             <motion.a
               key={index}
@@ -125,32 +376,69 @@ const Hero = () => {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={social.label}
-              className={`text-xl sm:text-2xl text-white/70 ${social.color} transition-all duration-300 p-2`}
-              whileHover={{ scale: 1.2, y: -5 }}
-              whileTap={{ scale: 0.9 }}
+              className="relative group text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition-all duration-300 text-3xl"
+              whileHover={{ scale: 1.4, y: -8, rotate: [0, -10, 10, 0] }}
+              whileTap={{ scale: 0.85 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 400, 
+                damping: 10,
+                duration: 0.5, 
+                delay: 1.6 + index * 0.1 
+              }}
             >
-              <i className={social.icon}></i>
+              <i className={`${social.icon} text-xl`} />
+              
+              {/* Tooltip */}
+              <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+                {social.label}
+              </span>
             </motion.a>
           ))}
         </motion.div>
 
-        <motion.div
-          className="mt-12 sm:mt-16"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <a href="#about" className="text-white/70 hover:text-white transition-colors group">
-            <div className="flex flex-col items-center gap-1 sm:gap-2">
-              <span className="text-xs sm:text-sm font-medium">Discover More</span>
-              <motion.i
-                className="fas fa-chevron-down text-lg sm:text-xl group-hover:text-purple-300"
-                animate={{ y: [0, 5, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              ></motion.i>
-            </div>
-          </a>
-        </motion.div>
+        {/* Enhanced scroll indicator */}
+        {!responsive.isMobile && (
+          <motion.div
+            className="mt-12 sm:mt-16 lg:mt-20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 2 }}
+          >
+            <motion.a 
+              href="#about" 
+              className="group flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors"
+              whileHover={{ y: -2 }}
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }}
+            >
+              <span className="text-sm font-medium tracking-wide">Discover More</span>
+              <motion.div
+                className="flex flex-col items-center gap-1"
+                animate={{ y: [0, 8, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <motion.i
+                  className="fas fa-chevron-down text-lg group-hover:text-black dark:group-hover:text-white"
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+                <motion.i
+                  className="fas fa-chevron-down text-sm group-hover:text-black dark:group-hover:text-white -mt-2"
+                  animate={{ opacity: [0.3, 0.7, 0.3] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.2 }}
+                />
+              </motion.div>
+            </motion.a>
+          </motion.div>
+        )}
       </motion.div>
+      
+
     </section>
   );
 };

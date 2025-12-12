@@ -1,62 +1,71 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useMemo, useRef } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { useResponsive } from './ResponsiveWrapper';
 
 const Projects = () => {
   const [filter, setFilter] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const responsive = useResponsive();
+  const constraintsRef = useRef(null);
 
   const projects = [
     {
       id: 1,
       title: 'MERN E-Commerce Platform',
-      description: '🚀 FLAGSHIP PROJECT - Production-ready e-commerce with advanced security, PayPal integration, and enterprise-level features.',
-      longDescription: 'Enterprise-grade e-commerce platform with JWT & Google OAuth authentication, PayPal payments, advanced security (XSS protection, rate limiting), real-time monitoring, internationalization support, and comprehensive admin management. Deployed on Netlify with backend on Render.',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Redux Toolkit', 'Tailwind CSS', 'PayPal', 'JWT', 'Cloudinary', 'Helmet.js'],
+      description: 'Production-ready e-commerce with PayPal integration, JWT authentication, and enterprise security features.',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express', 'PayPal API', 'JWT'],
       category: 'fullstack',
       github: 'https://github.com/visheshpanchal27/Mern',
       live: 'https://shopping-canter.netlify.app',
-      image: '🛒',
-      gradient: 'from-blue-500 to-purple-600',
-      features: ['Advanced Security & XSS Protection', 'PayPal & Google OAuth Integration', 'Real-time Monitoring & Analytics', 'Multi-language Support', 'Production Deployment']
+      icon: 'fas fa-shopping-cart',
+      gradient: 'from-gray-900 to-gray-800',
+      stats: { users: '500+', revenue: '$10K+' },
+      features: ['PayPal Integration', 'JWT Authentication', 'Real-time Analytics', 'Admin Dashboard'],
+      metrics: { performance: 98, security: 95, scalability: 92 }
     },
     {
       id: 2,
       title: 'AI DeepFake Detector',
-      description: '🧠 ADVANCED AI PROJECT - Cutting-edge deepfake detection system with 79.2% accuracy using computer vision and ML.',
-      longDescription: 'Advanced AI-powered detection system built with Python, OpenCV, and machine learning algorithms. Capable of analyzing images and videos to distinguish between human-created and AI-generated content with industry-level accuracy rates and comprehensive reporting.',
-      tech: ['Python', 'OpenCV', 'Machine Learning', 'Computer Vision', 'AI', 'TensorFlow'],
+      description: 'Machine learning system for deepfake detection with 79.2% accuracy using computer vision algorithms.',
+      tech: ['Python', 'OpenCV', 'TensorFlow', 'Machine Learning'],
       category: 'ai',
       github: 'https://github.com/visheshpanchal27/DeepFakeDetector',
       live: null,
-      image: '🤖',
-      gradient: 'from-purple-500 to-pink-600',
-      features: ['79.2% Accuracy Rate', 'Real-time Detection', 'Multi-format Support', 'Batch Processing', 'HTML Reports']
+      icon: 'fas fa-brain',
+      gradient: 'from-gray-800 to-gray-500',
+      stats: { accuracy: '79.2%', models: '5+' },
+      features: ['Computer Vision', 'Real-time Detection', 'Batch Processing', 'ML Pipeline'],
+      metrics: { accuracy: 79, speed: 85, reliability: 88 }
     },
     {
       id: 3,
       title: 'LV Shopping Center',
-      description: 'Java-based e-commerce platform built with JSP, Servlets, and CSS featuring complete shopping functionality.',
-      longDescription: 'A comprehensive e-commerce solution developed using Java web technologies including JSP, Servlets, and CSS. Features user authentication, product catalog, shopping cart, and order management system.',
-      tech: ['Java', 'JSP', 'Servlets', 'CSS', 'MySQL'],
+      description: 'Java web application with JSP, Servlets, and MySQL for complete e-commerce functionality.',
+      tech: ['Java', 'JSP', 'Servlets', 'MySQL'],
       category: 'backend',
       github: 'https://github.com/visheshpanchal27/LV_Shopping_Center',
       live: null,
-      image: '🏪',
-      gradient: 'from-red-500 to-orange-600',
-      features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Order Management']
+      icon: 'fas fa-store',
+      gradient: 'from-gray-800 to-gray-500',
+      stats: { products: '100+', users: '50+' },
+      features: ['User Authentication', 'Product Catalog', 'Shopping Cart', 'Order Management'],
+      metrics: { functionality: 90, design: 85, performance: 80 }
     },
     {
       id: 4,
       title: 'Banking Management System',
-      description: 'Console-based banking application developed in Java with complete banking operations and account management.',
-      longDescription: 'A terminal-based banking management system built with Core Java featuring account creation, transactions, balance inquiry, and comprehensive banking operations with secure data handling.',
-      tech: ['Java', 'Core Java', 'File Handling', 'OOP'],
+      description: 'Core Java console application with secure banking operations and account management features.',
+      tech: ['Java', 'OOP', 'File Handling'],
       category: 'backend',
       github: 'https://github.com/visheshpanchal27/java',
       live: null,
-      image: '🏦',
-      gradient: 'from-green-500 to-teal-600',
-      features: ['Account Management', 'Transaction Processing', 'Balance Inquiry', 'Secure Operations']
+      icon: 'fas fa-university',
+      gradient: 'from-slate-600 to-slate-800',
+      stats: { accounts: '25+', transactions: '100+' },
+      features: ['Account Management', 'Transaction Processing', 'Security Features', 'Data Handling'],
+      metrics: { security: 95, reliability: 90, efficiency: 88 }
     }
   ];
 
@@ -67,217 +76,565 @@ const Projects = () => {
     { id: 'ai', name: 'AI/ML', icon: 'fas fa-brain' }
   ];
 
-  const filteredProjects = filter === 'all' ? projects : projects.filter(project => project.category === filter);
+  const filteredProjects = useMemo(() => 
+    filter === 'all' ? projects : projects.filter(project => project.category === filter),
+    [filter, projects]
+  );
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.2 }
+      transition: { 
+        staggerChildren: 0.12,
+        delayChildren: 0.2,
+        ease: [0.22, 1, 0.36, 1]
+      }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
-    visible: { y: 0, opacity: 1, transition: { duration: 0.6 } }
+    hidden: { 
+      y: 60, 
+      opacity: 0,
+      scale: 0.9,
+      rotateX: -15,
+      filter: 'blur(10px)'
+    },
+    visible: { 
+      y: 0, 
+      opacity: 1, 
+      scale: 1,
+      rotateX: 0,
+      filter: 'blur(0px)',
+      transition: { 
+        type: "spring",
+        stiffness: 80,
+        damping: 20,
+        mass: 1,
+        duration: 0.8
+      }
+    }
+  };
+
+  const ProjectCard3D = ({ project, index }) => {
+    const cardRef = useRef(null);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+    const rotateX = useSpring(useTransform(y, [-100, 100], [15, -15]), { stiffness: 300, damping: 30 });
+    const rotateY = useSpring(useTransform(x, [-100, 100], [-15, 15]), { stiffness: 300, damping: 30 });
+
+    const handleMouseMove = (e) => {
+      if (!cardRef.current) return;
+      const rect = cardRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      x.set(e.clientX - centerX);
+      y.set(e.clientY - centerY);
+    };
+
+    const handleMouseLeave = () => {
+      x.set(0);
+      y.set(0);
+    };
+
+    return (
+      <motion.div
+        ref={cardRef}
+        variants={itemVariants}
+        style={{ 
+          rotateX, 
+          rotateY,
+          transformStyle: 'preserve-3d',
+          transformPerspective: 1000
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        whileHover={{ 
+          z: 50,
+          transition: { duration: 0.3 }
+        }}
+        className="group relative"
+      >
+        <motion.div
+          className="relative bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-black dark:to-gray-900 rounded-3xl overflow-hidden border border-gray-200 dark:border-white/10"
+          style={{ transformStyle: 'preserve-3d' }}
+          whileHover={{ 
+            boxShadow: '0 30px 60px -15px rgba(0,0,0,0.3), 0 0 0 1px rgba(255,255,255,0.1)'
+          }}
+        >
+          {/* Animated gradient overlay */}
+          <motion.div 
+            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+            style={{
+              background: `linear-gradient(135deg, ${project.gradient.includes('gray-900') ? '#1f1f1f' : '#4a5568'} 0%, transparent 100%)`,
+              mixBlendMode: 'overlay'
+            }}
+          />
+
+
+
+          {/* Header with parallax effect */}
+          <div className="relative h-44 overflow-hidden">
+            <motion.div 
+              className={`absolute inset-0 bg-gradient-to-br ${project.gradient}`}
+              style={{ 
+                scale: useTransform(y, [-100, 100], [1.1, 1]),
+                transformStyle: 'preserve-3d',
+                translateZ: 30
+              }}
+            >
+
+            </motion.div>
+
+            {/* Floating icon */}
+            <motion.div 
+              className="absolute top-4 right-4 w-16 h-16 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20"
+              whileHover={{ rotate: 360, scale: 1.1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <i className={`${project.icon} text-white text-2xl`} />
+            </motion.div>
+
+            {/* Status badge */}
+            <motion.div 
+              className="absolute top-4 left-4 flex items-center gap-2 bg-white/10 backdrop-blur-xl px-3 py-1.5 rounded-full border border-white/20"
+            >
+              <motion.div 
+                className={`w-2 h-2 rounded-full ${project.live ? 'bg-green-400' : 'bg-yellow-400'}`}
+                animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              />
+              <span className="text-white text-sm font-semibold">
+                {project.live ? 'Live' : 'Dev'}
+              </span>
+            </motion.div>
+
+            {/* Shine effect */}
+            <motion.div
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+              initial={{ x: '-100%', skewX: -20 }}
+              animate={{ x: '200%' }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity, 
+                repeatDelay: 5,
+                ease: 'easeInOut'
+              }}
+            />
+          </div>
+
+          {/* Content */}
+          <div className="relative p-5">
+            {/* Title */}
+            <h3 className="text-xl font-bold mb-2 text-gray-900 dark:text-white line-clamp-1">
+              {project.title}
+            </h3>
+
+            {/* Description */}
+            <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4 line-clamp-2">
+              {project.description}
+            </p>
+
+            {/* Stats */}
+            <div className="flex items-center gap-4 mb-4">
+              {Object.entries(project.stats).slice(0, 2).map(([key, value]) => (
+                <div key={key} className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                  <span className="text-sm font-bold text-gray-900 dark:text-white">{value}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Tech stack */}
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.tech.slice(0, 4).map((tech, idx) => (
+                <motion.span
+                  key={idx}
+                  className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-xs font-semibold rounded-lg"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                >
+                  {tech}
+                </motion.span>
+              ))}
+              {project.tech.length > 4 && (
+                <span className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 text-xs rounded-lg">
+                  +{project.tech.length - 4}
+                </span>
+              )}
+            </div>
+
+            {/* Action buttons */}
+            <div className="flex gap-3">
+              <motion.button
+                onClick={() => setSelectedProject(project)}
+                className="flex-1 px-5 py-2.5 bg-gray-900 dark:bg-white text-white dark:text-black rounded-xl font-semibold text-sm"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                View Details
+              </motion.button>
+
+              {project.live && (
+                <motion.a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl font-semibold text-sm"
+                  onClick={(e) => e.stopPropagation()}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <i className="fas fa-external-link-alt" />
+                </motion.a>
+              )}
+            </div>
+          </div>
+
+          {/* Glow effect */}
+          <motion.div
+            className={`absolute -inset-1 bg-gradient-to-r ${project.gradient} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl -z-10 transition-opacity duration-700`}
+            animate={{
+              scale: [1, 1.05, 1],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }}
+          />
+        </motion.div>
+      </motion.div>
+    );
   };
 
   return (
-    <section id="projects" className="py-20 px-4 bg-gradient-to-br from-purple-100 via-pink-100 to-rose-100 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900">
-      <div className="container mx-auto max-w-7xl">
+    <section 
+      id="projects" 
+      className={`relative overflow-hidden bg-white dark:bg-black ${
+        responsive.isMobile ? 'py-12 px-4' : 'py-16 sm:py-20 px-6'
+      }`}
+    >
+      <div className={`container mx-auto max-w-7xl relative z-10 ${
+        responsive.isMobile ? 'px-4' : 'px-6 lg:px-8'
+      }`}>
+        
+        {/* Header */}
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -50 }}
+          className={`text-center ${
+            responsive.isMobile ? 'mb-8' : 'mb-12 lg:mb-16'
+          }`}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            Featured Projects
-          </h2>
-          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Showcasing innovative solutions across different technologies and domains
-          </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mt-6"></div>
+          <motion.h2 
+            className={`font-bold mb-4 sm:mb-6 elegant-heading ${
+              responsive.isMobile ? 'text-3xl' :
+              responsive.isTablet ? 'text-4xl' :
+              'text-5xl lg:text-6xl'
+            }`}
+          >
+            <span className="text-black dark:text-white font-display">
+              Featured Projects
+            </span>
+          </motion.h2>
+          
+          <motion.p 
+            className={`text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed ${
+              responsive.isMobile ? 'text-base px-4' :
+              responsive.isTablet ? 'text-lg px-6' :
+              'text-xl px-8'
+            }`}
+          >
+            Showcasing innovative solutions across different technologies and domains.
+          </motion.p>
         </motion.div>
 
         {/* Filter Tabs */}
         <motion.div
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className={`flex justify-center mb-8 sm:mb-12 ${
+            responsive.isMobile ? 'flex-col gap-2 px-4' : 'flex-wrap gap-3 sm:gap-4'
+          }`}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
         >
-          {categories.map((category) => (
-            <motion.button
-              key={category.id}
-              onClick={() => setFilter(category.id)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                filter === category.id
-                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg'
-                  : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <i className={`${category.icon} mr-2`}></i>
-              {category.name}
-            </motion.button>
-          ))}
+          {categories.map((category, index) => {
+            const isActive = filter === category.id;
+            return (
+              <motion.button
+                key={category.id}
+                onClick={() => setFilter(category.id)}
+                className={`relative overflow-hidden font-semibold transition-all duration-300 touch-target ${
+                  responsive.isMobile ? 'w-full px-6 py-3 rounded-xl' : 'px-6 py-3 rounded-full'
+                } ${
+                  isActive
+                    ? 'bg-black dark:bg-white text-white dark:text-black shadow-lg'
+                    : 'bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 border-2 border-gray-300 dark:border-gray-600'
+                }`}
+                whileHover={{ 
+                  scale: responsive.isMobile ? 1.02 : 1.05,
+                  y: -2
+                }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <i className={category.icon} />
+                  <span>{category.name}</span>
+                </span>
+              </motion.button>
+            );
+          })}
         </motion.div>
 
         {/* Projects Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          key={filter}
-        >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              className="group relative"
-              variants={itemVariants}
-              onHoverStart={() => setHoveredProject(project.id)}
-              onHoverEnd={() => setHoveredProject(null)}
-              whileHover={{ y: -5 }}
-            >
-              <div className="bg-white/90 dark:bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-200 dark:border-gray-700 relative backdrop-blur-sm">
-                {/* Project Image/Icon */}
-                <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center text-6xl relative overflow-hidden`}>
-                  <motion.div
-                    className="text-white"
-                    animate={hoveredProject === project.id ? { scale: 1.2, rotate: 10 } : { scale: 1, rotate: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {project.image}
-                  </motion.div>
-                  
-                  {/* Overlay */}
-                  <motion.div
-                    className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1 }}
-                  >
-                    <div className="flex gap-4">
-                      <motion.a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <i className="fab fa-github text-xl"></i>
-                      </motion.a>
-                      {project.live && (
-                        <motion.a
-                          href={project.live}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-                          whileHover={{ scale: 1.1 }}
-                          whileTap={{ scale: 0.9 }}
-                        >
-                          <i className="fas fa-external-link-alt text-xl"></i>
-                        </motion.a>
-                      )}
-                    </div>
-                  </motion.div>
-                </div>
-                
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-gray-700 dark:text-gray-300 mb-4 text-sm leading-relaxed">
-                    {hoveredProject === project.id ? project.longDescription : project.description}
-                  </p>
-                  
-                  {/* Features */}
-                  <motion.div
-                    className="mb-4 space-y-2"
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={hoveredProject === project.id ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    {project.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-                        <i className="fas fa-check text-green-500 text-xs"></i>
-                        {feature}
-                      </div>
-                    ))}
-                  </motion.div>
-                  
-                  {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tech.map((tech, techIndex) => (
-                      <motion.span
-                        key={techIndex}
-                        className={`px-3 py-1 bg-gradient-to-r ${project.gradient} text-white text-xs rounded-full font-medium shadow-sm`}
-                        whileHover={{ scale: 1.05 }}
-                      >
-                        {tech}
-                      </motion.span>
-                    ))}
-                  </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="flex gap-3">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white px-4 py-2 rounded-lg transition-all duration-300 text-center text-sm font-medium"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <i className="fab fa-github mr-2"></i>Code
-                    </motion.a>
-                    {project.live && (
-                      <motion.a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex-1 bg-gradient-to-r ${project.gradient} text-white px-4 py-2 rounded-lg transition-all duration-300 text-center text-sm font-medium hover:shadow-lg`}
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                      >
-                        <i className="fas fa-external-link-alt mr-2"></i>Live Demo
-                      </motion.a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            className={`grid gap-6 ${
+              responsive.isMobile ? 'grid-cols-1' :
+              responsive.isTablet ? 'grid-cols-1 lg:grid-cols-2' :
+              'grid-cols-1 lg:grid-cols-2'
+            }`}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            key={filter}
+            style={{ perspective: 1000 }}
+          >
+            {filteredProjects.map((project, index) => (
+              <ProjectCard3D key={project.id} project={project} index={index} />
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* Call to Action */}
         <motion.div
-          className="text-center mt-16"
+          className={`text-center ${
+            responsive.isMobile ? 'mt-12' : 'mt-16'
+          }`}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            Interested in collaborating on innovative projects?
+          <p className={`text-slate-600 dark:text-slate-300 mb-6 ${
+            responsive.isMobile ? 'text-base px-4' : 'text-lg'
+          }`}>
+            Ready to collaborate on innovative projects?
           </p>
+          
           <motion.a
             href="#contact"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
+            className={`inline-flex items-center gap-3 font-bold rounded-xl bg-gray-900 dark:bg-white text-white dark:text-black shadow-xl ${
+              responsive.isMobile ? 'px-7 py-3.5 text-base' : 'px-9 py-4 text-lg'
+            }`}
+            whileHover={{ scale: 1.05, y: -3 }}
             whileTap={{ scale: 0.95 }}
           >
-            <i className="fas fa-rocket"></i>
-            Let's Build Something Amazing
+            <i className="fas fa-rocket" />
+            <span>Let's Build Something Amazing</span>
           </motion.a>
         </motion.div>
       </div>
+      
+      {/* Enhanced Project Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <motion.div
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedProject(null)}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="project-modal-title"
+          >
+            <motion.div
+              className="absolute inset-0 bg-black/70 backdrop-blur-xl"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+
+            <motion.div
+              className={`relative bg-white dark:bg-gray-900 rounded-2xl w-full max-h-[85vh] overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 ${
+                responsive.isMobile ? 'max-w-sm' : 'max-w-2xl'
+              }`}
+              initial={{ scale: 0.9, y: 50, opacity: 0 }}
+              animate={{ scale: 1, y: 0, opacity: 1 }}
+              exit={{ scale: 0.9, y: 50, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header */}
+              <div className={`relative bg-gradient-to-br ${selectedProject.gradient} overflow-hidden ${
+                responsive.isMobile ? 'h-32 p-4' : 'h-40 p-6'
+              }`}>
+                <motion.button
+                  onClick={() => setSelectedProject(null)}
+                  className={`absolute top-3 right-3 bg-white/20 backdrop-blur-xl rounded-full flex items-center justify-center text-white border border-white/30 ${
+                    responsive.isMobile ? 'w-8 h-8' : 'w-10 h-10'
+                  }`}
+                  whileHover={{ scale: 1.1, rotate: 90 }}
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <i className="fas fa-times" />
+                </motion.button>
+
+                <div className="flex items-center gap-3 h-full">
+                  <div className={`bg-white/20 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/30 flex-shrink-0 ${
+                    responsive.isMobile ? 'w-14 h-14' : 'w-16 h-16'
+                  }`}>
+                    <i className={`${selectedProject.icon} text-white ${
+                      responsive.isMobile ? 'text-2xl' : 'text-3xl'
+                    }`} />
+                  </div>
+                  
+                  <div className="flex-1 min-w-0">
+                    <h3 id="project-modal-title" className={`font-bold text-white mb-1 truncate ${
+                      responsive.isMobile ? 'text-lg' : 'text-2xl'
+                    }`}>
+                      {selectedProject.title}
+                    </h3>
+                    <div className="flex gap-2 flex-wrap">
+                      {Object.entries(selectedProject.stats).slice(0, responsive.isMobile ? 1 : 2).map(([key, value]) => (
+                        <div key={key} className={`bg-white/20 backdrop-blur-xl rounded-full border border-white/30 ${
+                          responsive.isMobile ? 'px-2 py-1' : 'px-3 py-1'
+                        }`}>
+                          <span className={`text-white font-bold ${
+                            responsive.isMobile ? 'text-xs' : 'text-sm'
+                          }`}>{value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className={`overflow-y-auto ${
+                responsive.isMobile ? 'max-h-[calc(85vh-8rem)] p-4' : 'max-h-[calc(85vh-10rem)] p-6'
+              }`}>
+                <p className={`text-gray-700 dark:text-gray-300 leading-relaxed mb-5 ${
+                  responsive.isMobile ? 'text-sm' : 'text-base'
+                }`}>
+                  {selectedProject.description}
+                </p>
+
+                {/* Performance Metrics */}
+                <div className="mb-5">
+                  <h4 className={`font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 ${
+                    responsive.isMobile ? 'text-base' : 'text-lg'
+                  }`}>
+                    <i className="fas fa-chart-line text-blue-500" />
+                    Metrics
+                  </h4>
+                  <div className="grid grid-cols-3 gap-2">
+                    {Object.entries(selectedProject.metrics).map(([key, value]) => (
+                      <div key={key} className={`bg-gray-50 dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 text-center ${
+                        responsive.isMobile ? 'p-2' : 'p-3'
+                      }`}>
+                        <div className={`font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent ${
+                          responsive.isMobile ? 'text-xl' : 'text-2xl'
+                        }`}>
+                          {value}%
+                        </div>
+                        <div className="text-xs text-gray-600 dark:text-gray-400 capitalize">{key}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Features */}
+                <div className="mb-5">
+                  <h4 className={`font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 ${
+                    responsive.isMobile ? 'text-base' : 'text-lg'
+                  }`}>
+                    <i className="fas fa-star text-yellow-500" />
+                    Features
+                  </h4>
+                  <div className={`grid gap-2 ${
+                    responsive.isMobile ? 'grid-cols-1' : 'grid-cols-2'
+                  }`}>
+                    {selectedProject.features.map((feature, idx) => (
+                      <div key={idx} className={`flex items-center gap-2 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 ${
+                        responsive.isMobile ? 'p-2' : 'p-3'
+                      }`}>
+                        <div className={`rounded-lg bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center flex-shrink-0 ${
+                          responsive.isMobile ? 'w-6 h-6' : 'w-7 h-7'
+                        }`}>
+                          <i className="fas fa-check text-white text-xs" />
+                        </div>
+                        <span className={`text-gray-700 dark:text-gray-300 font-medium ${
+                          responsive.isMobile ? 'text-xs' : 'text-sm'
+                        }`}>{feature}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Tech Stack */}
+                <div className="mb-5">
+                  <h4 className={`font-bold text-gray-900 dark:text-white mb-3 flex items-center gap-2 ${
+                    responsive.isMobile ? 'text-base' : 'text-lg'
+                  }`}>
+                    <i className="fas fa-code text-purple-500" />
+                    Tech Stack
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {selectedProject.tech.map((tech, idx) => (
+                      <span key={idx} className={`bg-gradient-to-r ${selectedProject.gradient} text-white font-semibold rounded-lg ${
+                        responsive.isMobile ? 'px-2 py-1 text-xs' : 'px-3 py-1.5 text-sm'
+                      }`}>
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Action Buttons */}
+                <div className={`flex gap-2 ${
+                  responsive.isMobile ? 'flex-col' : 'flex-row'
+                }`}>
+                  <motion.a
+                    href={selectedProject.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex-1 flex items-center justify-center gap-2 border-2 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-xl font-semibold ${
+                      responsive.isMobile ? 'px-4 py-2.5 text-sm' : 'px-5 py-3 text-base'
+                    }`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    <i className="fab fa-github" />
+                    View Code
+                  </motion.a>
+                  {selectedProject.live && (
+                    <motion.a
+                      href={selectedProject.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex-1 flex items-center justify-center gap-2 bg-gradient-to-r ${selectedProject.gradient} text-white rounded-xl font-semibold ${
+                        responsive.isMobile ? 'px-4 py-2.5 text-sm' : 'px-5 py-3 text-base'
+                      }`}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                    >
+                      <i className="fas fa-external-link-alt" />
+                      Live Demo
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

@@ -1,0 +1,293 @@
+/* Premium Dark Mode Enhancements */
+
+/* Luxury Background Patterns */
+.dark body {
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+}
+
+/* Premium Card Styles */
+.dark .premium-card {
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.dark .premium-card:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 12px 48px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform: translateY(-4px);
+}
+
+/* Luxury Text Glow */
+.dark .luxury-text {
+  color: #ffffff;
+  text-shadow: 
+    0 0 40px rgba(255, 255, 255, 0.4),
+    0 0 80px rgba(255, 255, 255, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.8);
+  filter: brightness(1.1) contrast(1.05);
+}
+
+/* Premium Gradient Backgrounds */
+.dark .premium-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(20, 20, 20, 1) 25%,
+    rgba(10, 10, 10, 1) 50%,
+    rgba(15, 15, 15, 1) 75%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* Metallic Shine Effect */
+.dark .metallic-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .metallic-shine::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 70%
+  );
+  animation: metallic-shine 3s infinite;
+}
+
+@keyframes metallic-shine {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* Premium Button Styles */
+.dark .premium-button {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #e8e8e8 100%);
+  color: #000000;
+  border: none;
+  box-shadow: 
+    0 4px 20px rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dark .premium-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.dark .premium-button:hover {
+  background: linear-gradient(135deg, #f8f8f8 0%, #e8e8e8 50%, #d8d8d8 100%);
+  box-shadow: 
+    0 8px 32px rgba(255, 255, 255, 0.3),
+    0 0 60px rgba(255, 255, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.dark .premium-button:hover::before {
+  left: 100%;
+}
+
+/* Frosted Glass Panels */
+.dark .frosted-panel {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(32px) saturate(150%) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Ambient Glow Effects */
+.dark .ambient-glow {
+  position: relative;
+}
+
+.dark .ambient-glow::after {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.dark .ambient-glow:hover::after {
+  opacity: 1;
+}
+
+/* Premium Dividers */
+.dark .premium-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 100%
+  );
+  box-shadow: 0 1px 2px rgba(255, 255, 255, 0.05);
+}
+
+/* Luxury Input Fields */
+.dark input,
+.dark textarea,
+.dark select {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 0 0 rgba(255, 255, 255, 0);
+  transition: all 0.3s ease;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  background: rgba(0, 0, 0, 0.8);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    inset 0 2px 4px rgba(0, 0, 0, 0.6),
+    0 0 0 3px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.15);
+  outline: none;
+}
+
+/* Premium Shadows */
+.dark .shadow-premium {
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.8),
+    0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.dark .shadow-premium-lg {
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 40px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Animated Gradient Border */
+.dark .gradient-border {
+  position: relative;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 12px;
+}
+
+.dark .gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  border-radius: 12px;
+  z-index: -1;
+  animation: gradient-rotate 3s linear infinite;
+}
+
+@keyframes gradient-rotate {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+/* Luxury Hover Effects */
+.dark .luxury-hover {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .luxury-hover:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.9),
+    0 0 60px rgba(255, 255, 255, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Premium Loading Animation */
+.dark .premium-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: premium-shimmer 2s infinite;
+}
+
+@keyframes premium-shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Elegant Typography */
+.dark .elegant-heading {
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #d0d0d0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Premium Backdrop */
+.dark .premium-backdrop {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(40px) saturate(150%);
+}
+
+/* Luxury Section Backgrounds */
+.dark .luxury-section {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(10, 10, 10, 1) 100%);
+}
+
+/* Refined Borders */
+.dark .refined-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark .refined-border:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 20px rgba(255, 255, 255, 0.05);
+}

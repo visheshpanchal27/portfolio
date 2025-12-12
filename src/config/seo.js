@@ -45,7 +45,7 @@ export const seoConfig = {
   defaultTitle: 'Vishesh Panchal | Full Stack Developer & React Specialist',
   defaultDescription: 'Experienced Full Stack Developer specializing in React, Node.js, and modern web technologies. View my portfolio featuring MERN stack projects, AI applications, and innovative web solutions.',
   keywords: 'Vishesh Panchal, Full Stack Developer, React Developer, MERN Stack, JavaScript, Node.js, MongoDB, Portfolio, Web Development, AI Projects, E-commerce, vishesh.work.gd',
-  image: 'https://res.cloudinary.com/dhyc478ch/image/upload/v1759829478/main_logo_r5dmsz.png',
+  image: 'https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg',
   
   // Domain-specific titles and descriptions
   domainSpecific: {
