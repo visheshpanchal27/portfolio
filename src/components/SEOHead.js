@@ -207,30 +207,7 @@ const SEOHead = ({
     ]
   };
 
-  const reviewSchema = {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "Service",
-      "name": "Full Stack Development Services",
-      "provider": {
-        "@type": "Person",
-        "name": "Vishesh Panchal"
-      }
-    },
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": "5",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
-    "author": {
-      "@type": "Person",
-      "name": "Anonymous Client"
-    },
-    "reviewBody": "Excellent full-stack developer with strong MERN stack skills and AI expertise. Delivers high-quality solutions on time.",
-    "datePublished": "2024-01-15"
-  };
+
 
 
 
@@ -533,9 +510,7 @@ const SEOHead = ({
         <script type="application/ld+json">
           {JSON.stringify(faqSchema)}
         </script>
-        <script type="application/ld+json">
-          {JSON.stringify(reviewSchema)}
-        </script>
+
         <script type="application/ld+json">
           {JSON.stringify(eventSchema)}
         </script>
