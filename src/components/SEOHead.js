@@ -211,47 +211,56 @@ const SEOHead = ({
     "@context": "https://schema.org",
     "@type": "Review",
     "itemReviewed": {
-      "@type": "Person",
-      "name": "Vishesh Panchal"
+      "@type": "Service",
+      "name": "Full Stack Development Services",
+      "provider": {
+        "@type": "Person",
+        "name": "Vishesh Panchal"
+      }
     },
     "reviewRating": {
       "@type": "Rating",
       "ratingValue": "5",
-      "bestRating": "5"
+      "bestRating": "5",
+      "worstRating": "1"
     },
     "author": {
       "@type": "Person",
-      "name": "Professional Client"
+      "name": "Anonymous Client"
     },
-    "reviewBody": "Excellent full-stack developer with strong MERN stack skills and AI expertise. Delivers high-quality solutions on time."
+    "reviewBody": "Excellent full-stack developer with strong MERN stack skills and AI expertise. Delivers high-quality solutions on time.",
+    "datePublished": "2024-01-15"
   };
 
-  const courseSchema = {
-    "@context": "https://schema.org",
-    "@type": "Course",
-    "name": "Full Stack Development with MERN Stack",
-    "description": "Comprehensive full-stack development expertise",
-    "provider": {
-      "@type": "Person",
-      "name": "Vishesh Panchal"
-    },
-    "teaches": ["React.js", "Node.js", "MongoDB", "Express.js", "JavaScript", "AI/ML"]
-  };
+
 
   const eventSchema = {
     "@context": "https://schema.org",
     "@type": "Event",
-    "name": "Portfolio Launch",
-    "startDate": "2024-01-01",
+    "name": "Portfolio Website Launch",
+    "startDate": "2024-01-01T00:00:00+05:30",
+    "endDate": "2024-01-01T23:59:59+05:30",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
     "location": {
       "@type": "VirtualLocation",
-      "url": canonicalUrl
+      "url": canonicalUrl,
+      "name": "Online Portfolio"
     },
     "organizer": {
       "@type": "Person",
-      "name": "Vishesh Panchal"
+      "name": "Vishesh Panchal",
+      "url": canonicalUrl
     },
-    "description": "Launch of professional portfolio website showcasing full-stack development projects"
+    "description": "Launch of professional portfolio website showcasing full-stack development projects and services",
+    "image": seoConfig.image,
+    "offers": {
+      "@type": "Offer",
+      "url": canonicalUrl,
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    }
   };
 
   const softwareSchema = {
@@ -526,9 +535,6 @@ const SEOHead = ({
         </script>
         <script type="application/ld+json">
           {JSON.stringify(reviewSchema)}
-        </script>
-        <script type="application/ld+json">
-          {JSON.stringify(courseSchema)}
         </script>
         <script type="application/ld+json">
           {JSON.stringify(eventSchema)}

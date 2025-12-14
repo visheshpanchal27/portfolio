@@ -1,46 +1,30 @@
-# Ultra-Advanced Robots.txt for Maximum SEO
 User-agent: *
 Allow: /
-Allow: /static/
-Allow: /assets/
-Allow: /*.css
-Allow: /*.js
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.jpeg
-Allow: /*.gif
-Allow: /*.svg
-Allow: /*.webp
-Allow: /*.ico
-Allow: /#about
-Allow: /#skills
-Allow: /#projects
-Allow: /#contact
 
-# Major Search Engines
+# Sitemap
+Sitemap: https://vishesh.work.gd/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Allow all major search engines
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Slurp
 Allow: /
-Crawl-delay: 2
 
 User-agent: DuckDuckBot
 Allow: /
-Crawl-delay: 1
 
 User-agent: Baiduspider
 Allow: /
-Crawl-delay: 2
 
 User-agent: YandexBot
 Allow: /
-Crawl-delay: 2
 
 User-agent: facebookexternalhit
 Allow: /
@@ -51,73 +35,10 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
-User-agent: WhatsApp
-Allow: /
-
-User-agent: TelegramBot
-Allow: /
-
-User-agent: SkypeUriPreview
-Allow: /
-
-User-agent: Applebot
-Allow: /
-
-User-agent: ia_archiver
-Allow: /
-
-# SEO Tools
-User-agent: AhrefsBot
-Allow: /
-
-User-agent: SemrushBot
-Allow: /
-
-User-agent: MJ12bot
-Allow: /
-
-User-agent: DotBot
-Allow: /
-
-User-agent: SeznamBot
-Allow: /
-
-User-agent: MegaIndex
-Allow: /
-
-# Disallow sensitive areas
-Disallow: /admin/
-Disallow: /private/
-Disallow: /temp/
-Disallow: /cache/
-Disallow: /logs/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /build/
+# Disallow unnecessary paths
+Disallow: /static/
+Disallow: /_next/
+Disallow: /api/
 Disallow: /*.json$
-Disallow: /*.md$
-Disallow: /package.json
-Disallow: /package-lock.json
-Disallow: /yarn.lock
-
-# Sitemap locations
-Sitemap: https://vishesh.work.gd/sitemap.xml
-Sitemap: https://vishesh.work.gd/sitemap-index.xml
-Sitemap: https://vishesh.work.gd/sitemap-pages.xml
-Sitemap: https://vishesh.work.gd/sitemap-projects.xml
-Sitemap: https://vishesh.work.gd/sitemap-skills.xml
-
-# Host directive
-Host: vishesh.work.gd
-
-# Clean URLs
-Clean-param: utm_source
-Clean-param: utm_medium
-Clean-param: utm_campaign
-Clean-param: utm_term
-Clean-param: utm_content
-Clean-param: fbclid
-Clean-param: gclid
-Clean-param: ref
-Clean-param: source
+Disallow: /*.xml$
+Allow: /sitemap.xml
