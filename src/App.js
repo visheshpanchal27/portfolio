@@ -9,7 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import SEOHead from './components/SEOHead';
 import DomainHandler from './components/DomainHandler';
-import ContentSection from './components/ContentSection';
+
 import LoadingScreen from './components/LoadingScreen';
 import ErrorBoundary from './components/ErrorBoundary';
 import ResponsiveWrapper from './components/ResponsiveWrapper';
@@ -74,7 +74,7 @@ function App() {
                   <About />
                   <Skills />
                   <Projects />
-                  <ContentSection />
+
                   <Contact />
                 </main>
                 <Footer />
