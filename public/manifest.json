@@ -4,25 +4,25 @@
   "description": "Professional Full Stack Developer specializing in MERN Stack, AI/ML, and modern web technologies. View portfolio, projects, and get in touch.",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/svg+xml"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
+      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg",
+      "type": "image/svg+xml",
       "sizes": "192x192",
       "purpose": "maskable any"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
+      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg",
+      "type": "image/svg+xml",
       "sizes": "512x512",
       "purpose": "maskable any"
     },
     {
-      "src": "apple-touch-icon.png",
-      "type": "image/png",
+      "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg",
+      "type": "image/svg+xml",
       "sizes": "180x180"
     }
   ],
@@ -55,21 +55,21 @@
       "short_name": "About",
       "description": "Learn about Vishesh Panchal",
       "url": "/#about",
-      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg", "sizes": "192x192" }]
     },
     {
       "name": "Projects",
       "short_name": "Projects", 
       "description": "View portfolio projects",
       "url": "/#projects",
-      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg", "sizes": "192x192" }]
     },
     {
       "name": "Contact",
       "short_name": "Contact",
       "description": "Get in touch",
       "url": "/#contact", 
-      "icons": [{ "src": "logo192.png", "sizes": "192x192" }]
+      "icons": [{ "src": "https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg", "sizes": "192x192" }]
     }
   ],
   "related_applications": [

@@ -9,6 +9,8 @@
 			<head>
 				<title>XML Sitemap</title>
 				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg" />
+				<link rel="shortcut icon" href="https://res.cloudinary.com/dhyc478ch/image/upload/v1765255874/Untitled_design1_wwwx1q.svg" />
 				<style type="text/css">
 					body {
 						font-family: Arial, sans-serif;
