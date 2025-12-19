@@ -1,9 +1,9 @@
-# Force HTTPS
-http://vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
-
 # Redirect www to non-www (SEO)
 https://www.vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
 http://www.vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
+
+# Force HTTPS
+http://vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
 
 # SPA fallback
 /*    /index.html   200
