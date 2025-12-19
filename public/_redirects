@@ -1,19 +1,7 @@
-# Handle SPA routing
+# Force HTTPS
+http://vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
+http://www.vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
+https://www.vishesh.work.gd/* https://vishesh.work.gd/:splat 301!
+
 # SPA fallback
 /*    /index.html   200
-
-# SEO-friendly redirects
-/about    /index.html   200
-/skills   /index.html   200
-/projects /index.html   200
-/services /index.html   200
-/contact  /index.html   200
-
-# Force HTTPS
-http://vishesh.work.gd/*  https://vishesh.work.gd/:splat  301!
-http://www.vishesh.work.gd/*  https://vishesh.work.gd/:splat  301!
-
-# Force HTTPS (no www)
-https://www.vishesh.work.gd/*  https://vishesh.work.gd/:splat  301!
-http://www.vishesh.work.gd/*  https://vishesh.work.gd/:splat  301!
-http://vishesh.work.gd/*  https://vishesh.work.gd/:splat  301!

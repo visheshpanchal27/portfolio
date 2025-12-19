@@ -1,0 +1,23 @@
+[build]
+  publish = "build"
+  command = "npm run build"
+
+[[redirects]]
+  from = "http://vishesh.work.gd/*"
+  to = "https://vishesh.work.gd/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.vishesh.work.gd/*"
+  to = "https://vishesh.work.gd/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
