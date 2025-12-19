@@ -22,8 +22,7 @@ export const seoConfig = {
   
   // All domain variations (main domain first)
   domains: [
-    'https://vishesh.work.gd',
-    'https://www.vishesh.work.gd'
+    'https://vishesh.work.gd'
   ],
   
   // Get current domain config
@@ -54,11 +53,7 @@ export const seoConfig = {
       description: 'Official website of Vishesh Panchal - Full Stack Developer specializing in MERN Stack, AI applications, and modern web development. Explore projects and get in touch.',
       keywords: 'Vishesh Panchal official, vishesh.work.gd, Full Stack Developer, MERN Stack Expert'
     },
-    'www.vishesh.work.gd': {
-      title: 'Vishesh Panchal | Professional Portfolio - MERN Stack Developer', 
-      description: 'Professional portfolio of Vishesh Panchal showcasing expertise in React, Node.js, MongoDB, AI projects, and e-commerce solutions. Available for freelance work.',
-      keywords: 'Vishesh Panchal professional, www.vishesh.work.gd, MERN Stack Developer, React Expert'
-    },
+
 
   },
   
